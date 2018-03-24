@@ -7,7 +7,7 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "e2e":true,
+        "**/e2e":true,
         // "node_modules":true,
         ".editorconfig":true,
         ".zshrc":true,
@@ -23,7 +23,6 @@
         "karma.conf.js":true,
         "protractor.conf.js":true,
         "upgrade.md":true,
-        "e2e":true,        
         "src/test.ts":true
     }
 }
