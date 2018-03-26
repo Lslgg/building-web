@@ -1,0 +1,25 @@
+div.change-box {
+  display: inline-block;
+  vertical-align: middle;
+  border-left: 1px solid #073D51;
+  font-size: 14px;
+  padding: 10px 15px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -webkit-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  i.fa {
+    display: inline;
+  }
+}
+
+div.change-box:last-child {
+  border-right: 1px solid #073D51;
+}
+
+div.change-box:hover {
+  background-color: #12AEF8;
+}

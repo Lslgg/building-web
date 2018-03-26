@@ -1,0 +1,17 @@
+.top-bar {
+  background-color: #012c3c;
+  z-index: 500;
+  div.container {
+    max-width: 1370px;
+    div.bar {
+      display: inline-block;
+      vertical-align: middle;
+      width: 49%;
+      font-size: 0;
+      color: #999ea3;      
+    }
+    div.rbar {
+      text-align: right;
+    }
+  }
+}

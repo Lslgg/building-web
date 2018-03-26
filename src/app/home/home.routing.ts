@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
+import { TopBarComponent } from './component/topBar/topBar.component';
 
 var routesList: Routes = [
 ];
@@ -20,5 +21,6 @@ const routes: Routes = [
 export class HomeRoutingModule { }
 
 export const routedComponents = [
-    HomeComponent
+    HomeComponent,
+    TopBarComponent,
 ];
