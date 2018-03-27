@@ -1,14 +1,18 @@
-.top-bar {
+.header {
   background-color: #012c3c;
   z-index: 500;
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1400px;
+    }
+  }
   div.container {
-    max-width: 1370px;
     div.bar {
       display: inline-block;
       vertical-align: middle;
       width: 49%;
       font-size: 0;
-      color: #999ea3;      
+      color: #999ea3;
     }
     div.rbar {
       text-align: right;

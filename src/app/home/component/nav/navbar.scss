@@ -1,0 +1,91 @@
+.navbox {
+  background-color: #fff;
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1370px;
+    }
+  }
+  .container {
+    min-height: 84px;
+    .row {
+      padding-left: 0;
+      .menu-col {
+        padding: 0;
+        nav {
+          margin: 0 auto;
+          .first-ul {
+            padding: 0;
+            margin: 0;
+            li {
+              margin: 0;
+              list-style-type: none;
+              display: inline-block;
+              vertical-align: middle;
+              width: auto;
+              text-align: center;
+              padding: 0 16px;
+              font-size: 14px;
+              line-height: 84px;
+              color: #333;
+              font-weight: bold;
+              cursor: pointer;
+              .drop-menu {
+                display: none;
+                position: absolute;
+                width: 160px;
+                top: 84px;
+                left: 0;
+                background-color: #337ab7;
+                .sc-ul {
+                  padding: 0;
+                  margin: 0;
+                  li {
+                    padding: 0;
+                    margin: 0;
+                    list-style-type: none;
+                  }
+                }
+              }
+              &:hover {
+                transition: color 0.3s;
+                color: #FE5454;
+                .drop-menu {
+                  display: block;
+                }
+              }
+            }
+            @media screen and (max-width: 1800px) {
+              li {
+                padding: 0 12px;
+              }
+            }
+            @media screen and (max-width: 1220px) {
+              li {
+                padding: 0 10px;
+              }
+            }
+          }
+        }
+      }
+      .icon-col {
+        .logobox {
+          margin-top: 17px;
+          img {
+            cursor: pointer;
+          }
+        }
+        .nav-btm {
+          cursor: pointer;
+          line-height: 1;
+          position: absolute;
+          top: 25px;
+          right: 10px;
+          border: 1px #ddd solid;
+          border-radius: 5px;
+          padding: 7px 8px;
+          background: rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+  }
+}

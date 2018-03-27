@@ -1,0 +1,10 @@
+<div class="slide-box" [class.b-color]="mouseState=='enter' || mouseState=='popup' || mouseState=='down'" (mouseenter)="onEnter()"
+  (mouseleave)="onLeave()">
+  <i class="{{iconName}}"> </i>
+  <span>{{title}}</span>
+  <div class="slide" [@mouseState]="mouseState" (@mouseState.done)="animationDone($event)">
+    <i class="{{iconName}}" [class.f-color-fff]="mouseState=='enter' || mouseState=='popup' || mouseState=='down'" [class.f-color-grey]="mouseState=='leave'">
+    </i>
+    <span [class.f-color-f]="mouseState=='enter' || mouseState=='popup' || mouseState=='down'">{{title}}</span>
+  </div>
+</div>

@@ -2,29 +2,48 @@ div.slide-box {
   display: inline-block;
   vertical-align: middle;
   border-left: 1px solid #073D51;
-  font-size: 14px;
-  padding: 10px 15px;
+  font-size: 13px;
+  padding: 12px 15px;
   text-align: center;
   cursor: pointer;
   position: relative;
-  z-index: 1000;
   i.fa {
     display: inline;
   }
   div.slide {
     position: absolute;
     width: 100%;
-    height: 100%;
-    font-size: 0;
+    height: 0;
+    font-size: 13px;
     padding: 0;
+    line-height: 48px;
+    text-align: center;
     margin: 0;
     top: 0;
     left: 0;
-    z-index: 200;
     background-color: #2098d1;
   }
 }
 
 div.slide-box:last-child {
   border-right: 1px solid #073D51;
+}
+
+.b-color {
+  transition: background-color 0.3s;
+  background-color: #FE5454;
+}
+
+.f-color-fff {
+  transition: color 0.8s;
+  color: #fff;
+}
+
+.f-color-grey {
+  transition: color 0.8s;
+  color: #999ea3;
+}
+
+.f-color-f {
+  color: #fff;
 }
