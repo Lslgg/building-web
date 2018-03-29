@@ -1,0 +1,40 @@
+.search-bar {
+  background-color: #FE5454;
+  overflow: hidden;
+  height: 65px;
+  transition: height 1s ease;
+  .container {
+    // max-width: 1320px; 
+    .input-col {
+      min-width: 235px;
+      .input-box {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        background-color: #fff;
+        border-radius: 8px;
+        padding-left: 10px;
+        padding-right: 10px;
+        input {
+          border: 0;
+          height: 35px;
+          margin-right: 10px;
+          width: 80%;
+          font-size: 13px;
+        }
+        i {
+          font-size: 16px;
+          line-height: 35px;
+          cursor: pointer;
+          color: #337ab7;
+          &:hover {
+            color: #FE5454;
+          }
+        }
+      }
+    }
+  }
+}
+
+.no-height {
+  height: 0;
+}

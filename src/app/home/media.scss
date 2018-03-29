@@ -1,0 +1,35 @@
+@media (min-width: 1200px) {
+  .navbox>.container {
+    max-width: 1370px;
+  }
+  .header>.container {
+    max-width: 1400px;
+  }
+  .search-bar>.container {
+    max-width: 1300px;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .list-item {
+    padding: 0 12px;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .list-item {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .nav-btm {
+    display: block !important;
+  }
+  .menu-col {
+    display: none;
+  }
+  .header {
+    display: none;
+  }
+}

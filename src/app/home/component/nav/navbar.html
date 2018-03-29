@@ -1,3 +1,4 @@
+<home-search-bar [flag]="flag"></home-search-bar>
 <div class="navbox">
   <div class="container">
     <div class="row">
@@ -5,34 +6,22 @@
         <div class="logobox">
           <img src="assets/img/logo.png" />
         </div>
-        <span class="nav-btm d-block d-lg-none d-xl-none">
+        <span class="nav-btm">
           <i class="fa fa-bars"></i>
         </span>
       </div>
-      <div class="menu-col col d-none d-lg-block d-xl-block">
+      <div class="menu-col col">
         <nav>
-          <ul class="first-ul">
-            <li>网站首页
-              <div class="drop-menu">
-                <ul class="sc-ul">
-                  <li>test</li>
-                  <li>test</li>
-                  <li>test</li>
-                  <li>test</li>
-                  <li>test</li>
-                </ul>
-              </div>
-            </li>
-            <li>网站首页</li>
-            <li>网站首页</li>
-            <li>网站首页</li>
-            <li>网站首页</li>
-            <li>网站首页</li>
-            <li>网站首页</li>
-            <li>网站首页</li>
-            <li>
-              <i class="fa fa-search"></i>
-            </li>
+          <ul>
+            <home-list-item title="网站首页"></home-list-item>
+            <home-list-item title="网站首页" [secondList]="list"></home-list-item>
+            <home-list-item title="网站首页" [secondList]="list"></home-list-item>
+            <home-list-item title="网站首页" [secondList]="list"></home-list-item>
+            <home-list-item title="网站首页" [secondList]="list"></home-list-item>
+            <home-list-item title="网站首页" [secondList]="list"></home-list-item>
+            <home-list-item title="网站首页" [secondList]="list"></home-list-item>
+            <home-list-item title="网站首页" [secondList]="list"></home-list-item>
+            <home-list-item isSearch=true (onClick)="onClick()"></home-list-item>
           </ul>
         </nav>
       </div>

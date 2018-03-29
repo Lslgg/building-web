@@ -1,0 +1,22 @@
+<ng-container *ngIf="!isSearch">
+  <li class="list-item">
+    {{title}}
+    <ng-container *ngIf="secondList">
+      <div class="list-arrow">
+        <i class="fa fa-caret-down"></i>
+      </div>
+      <div class="drop-menu">
+        <ul>
+          <li *ngFor="let item of secondList">
+            <a href='#'>{{item.title}}</a>
+          </li>
+        </ul>
+      </div>
+    </ng-container>
+  </li>
+</ng-container>
+<ng-container *ngIf="isSearch">
+  <li class="list-item" (click)="onClickItem()" style="padding-left:0;">
+    <i class="fa fa-search"></i>
+  </li>
+</ng-container>

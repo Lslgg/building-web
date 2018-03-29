@@ -3,6 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { HeaderComponent } from './component/header/header.component';
 import { NavBarComponent } from './component/nav/navbar.component';
+import { SlideBoxComponent } from './component/header/component/slideBox/slideBox.component';
+import { ListItemComponent } from './component/nav/component/listitem/listitem.component';
+import { SearchBarComponent } from './component/nav/component/searchBar/searchBar.component';
+import { ChangeBoxComponent } from './component/header/component/changeBox/changeBox.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { BoardComponent } from './component/footer/board/board.component';
 
 var routesList: Routes = [
 ];
@@ -23,6 +29,12 @@ export class HomeRoutingModule { }
 
 export const routedComponents = [
     HomeComponent,
+    SlideBoxComponent,
+    ChangeBoxComponent,
     HeaderComponent,
-    NavBarComponent
+    NavBarComponent,
+    ListItemComponent,
+    SearchBarComponent,
+    FooterComponent,
+    BoardComponent
 ];
