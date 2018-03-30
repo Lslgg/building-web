@@ -9,6 +9,8 @@ import { SearchBarComponent } from './component/nav/component/searchBar/searchBa
 import { ChangeBoxComponent } from './component/header/component/changeBox/changeBox.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { BoardComponent } from './component/footer/board/board.component';
+import { NavbarComponent } from './component/footer/navbar/navbar.component';
+import { BriefComponent } from './component/footer/brief/brief.component';
 
 var routesList: Routes = [
 ];
@@ -36,5 +38,7 @@ export const routedComponents = [
     ListItemComponent,
     SearchBarComponent,
     FooterComponent,
-    BoardComponent
+    BoardComponent,
+    NavbarComponent,
+    BriefComponent
 ];

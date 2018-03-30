@@ -11,13 +11,13 @@
 }
 
 @media screen and (max-width: 1800px) {
-  .list-item {
+  .list-item>a {
     padding: 0 12px;
   }
 }
 
 @media screen and (max-width: 1220px) {
-  .list-item {
+  .list-item>a {
     padding: 0 10px;
   }
 }

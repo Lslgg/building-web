@@ -8,8 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class SearchBarComponent implements OnInit {
 
-    toggle: boolean = false;
-    
+    toggle: boolean = true;
+
     @Input()
     set flag(flag: Number) {
         if (flag > 0) {

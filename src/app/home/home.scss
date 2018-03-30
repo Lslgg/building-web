@@ -1,4 +1,13 @@
-body {
+html,
+body,
+app-root {
   font-family: Microsoft YaHei;
   font-size: 13px;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }

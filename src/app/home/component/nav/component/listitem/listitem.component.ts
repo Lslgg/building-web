@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
     selector: 'home-list-item',
     templateUrl: 'listItem.html',
-    styleUrls: ['./listItem.scss','../../../../media.scss']
+    styleUrls: ['./listItem.scss', '../../../../media.scss']
 })
 
 export class ListItemComponent implements OnInit {
@@ -20,7 +20,7 @@ export class ListItemComponent implements OnInit {
 
     ngOnInit() { }
 
-    onClickItem() {        
+    onClickItem() {
         this.onClick.emit(true);
     }
 }

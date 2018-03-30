@@ -1,0 +1,78 @@
+.brief {
+  h4 {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #0e3c4f;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 24px;
+    color: #7e959e;
+  }
+  a {
+    // display: block;
+    color: #3288B0;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  ul {
+    margin: 10px 0 0 0;
+    text-align: left;
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      width: auto;
+      height: auto;
+      position: relative;
+      a {
+        display: block;
+        position: relative;
+        font-size: 30px;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        margin-right: 5px; // background-color: transparent;
+        background: #FE5454;
+        background-image: initial;
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;        
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: rgb(254, 84, 84);
+        background-size: 100%;
+        color: #fff;
+        border-radius: 50%;
+        i {
+          font-size: 30px;
+          width: 40px;
+          line-height: 40px;
+          border-radius: 50%;
+          color: #fff;
+          transition: color 2s ease;
+          background-color: transparent;
+        }
+      }
+      a:before {
+        content: "";
+        position: absolute;
+        color: red;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0; // background-color: #fff;
+        background-color: #fff;
+        border-radius: 100%;
+        transition: all 2s ease;
+        z-index: -1;
+        opacity: 0.5;
+      }
+    }
+  }
+}

@@ -1,8 +1,8 @@
 <div class="board-row">
-  <div class="board" (mouseenter)="onEnter()" (mouseleave)="onLeave()">
+  <a class="board" (mouseenter)="onEnter()" (mouseleave)="onLeave()" href="#">
     <span>某某装饰——精益求精</span>
     <div class="board sf-board" [@state]="state" (@state.done)="animationDone($event)">
       <span>某某装饰——精益求精</span>
     </div>
-  </div>
+  </a>
 </div>
