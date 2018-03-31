@@ -2,13 +2,17 @@
   display: inline-block;
   vertical-align: middle;
   border-left: 1px solid #073D51;
-  color:#999ea3;
-  font-size: 15px;
-  padding: 12px 18px;
+  color: #999ea3;
+  font-size: 18px;
+  padding: 0 18px;
   text-align: center;
   cursor: pointer;
   position: relative;
-  transition: all 0.5s;  
+  transition: all 0.5s;
+  line-height: 48px;
+  i {
+    font-size: 18px;
+  }
 }
 
 .change-box:last-child {
@@ -17,5 +21,5 @@
 
 .change-box:hover {
   background-color: #12AEF8;
-  color:#fff;
+  color: #fff;
 }

@@ -11,6 +11,10 @@ import { FooterComponent } from './component/footer/footer.component';
 import { BoardComponent } from './component/footer/board/board.component';
 import { NavbarComponent } from './component/footer/navbar/navbar.component';
 import { BriefComponent } from './component/footer/brief/brief.component';
+import { NewsComponent } from './component/footer/news/news.component';
+import { ContactComponent } from './component/footer/contact/contact.component';
+import { QrcodeComponent } from './component/footer/qrcode/qrcode.component';
+import { CopyrightComponent } from './component/footer/copyright/copyright.component';
 
 var routesList: Routes = [
 ];
@@ -40,5 +44,9 @@ export const routedComponents = [
     FooterComponent,
     BoardComponent,
     NavbarComponent,
-    BriefComponent
+    BriefComponent,
+    NewsComponent,
+    ContactComponent,
+    QrcodeComponent,
+    CopyrightComponent
 ];

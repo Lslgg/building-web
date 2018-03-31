@@ -10,6 +10,12 @@
   }
 }
 
+@media (min-width: 1800px) {
+  .footer>.container {
+    max-width: 1370px;
+  }
+}
+
 @media screen and (max-width: 1800px) {
   .list-item>a {
     padding: 0 12px;
