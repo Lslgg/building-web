@@ -2,9 +2,10 @@
   (mouseleave)="onLeave()">
   <i class="{{iconName}}"> </i>
   <span>{{title}}</span>
+  <!-- <div class="slide"></div> -->
   <a class="slide" href="#" [@mouseState]="mouseState" (@mouseState.done)="animationDone($event)">
-    <i class="{{iconName}}" [class.f-color-fff]="mouseState=='enter' || mouseState=='popup' || mouseState=='down'" [class.f-color-grey]="mouseState=='leave'">
-    </i>
-    <span [class.f-color-f]="mouseState=='enter' || mouseState=='popup' || mouseState=='down'">{{title}}</span>
+    <!-- <i class="{{iconName}}" [class.f-color-fff]="mouseState=='enter' || mouseState=='popup' || mouseState=='down'" [class.f-color-grey]="mouseState=='leave'">
+    </i> -->
+    <!-- <span [class.f-color-f]="mouseState=='enter' || mouseState=='popup' || mouseState=='down'">{{title}}</span> -->
   </a>
 </a>
