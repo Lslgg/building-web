@@ -15,6 +15,10 @@ import { NewsComponent } from './component/footer/news/news.component';
 import { ContactComponent } from './component/footer/contact/contact.component';
 import { QrcodeComponent } from './component/footer/qrcode/qrcode.component';
 import { CopyrightComponent } from './component/footer/copyright/copyright.component';
+import { SlideComponent } from './component/slide/slide.component';
+import { ServiceComponent } from './component/service/service.component';
+import { TeamComponent } from './component/team/team.component';
+import { ExampleComponent } from './component/example/example.component';
 
 var routesList: Routes = [
 ];
@@ -48,5 +52,9 @@ export const routedComponents = [
     NewsComponent,
     ContactComponent,
     QrcodeComponent,
-    CopyrightComponent
+    CopyrightComponent,
+    SlideComponent,
+    ServiceComponent,
+    TeamComponent,
+    ExampleComponent
 ];

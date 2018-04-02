@@ -9,10 +9,15 @@
   cursor: pointer;
   position: relative;
   background-color: #FE5454;
+  z-index: 100;
+  transition: color 0.5s ease;
   span {
     display: inline-block;
     width: 210px;
     margin-left: 40px;
+  }
+  &:hover {
+    color: #FE5454;
   }
 }
 
@@ -21,8 +26,10 @@
   top: 0;
   left: 0;
   width: 0;
+  height: 51px;
   overflow: hidden;
   white-space: nowrap;
   background-color: #fff;
   color: #FE5454;
+  z-index: -1;
 }

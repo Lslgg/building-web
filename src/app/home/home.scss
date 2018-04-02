@@ -11,3 +11,20 @@ app-root {
   left: 0;
   right: 0;
 }
+
+.service-section {
+  background-color: #fff;
+  .container-service {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+}
+
+.example-wrapper {
+  background-image: url(../../assets/building-img/project-bg.jpg);
+  background-position: center;
+  background-size: 100%;
+  .container-example {
+    padding: 45px 0;
+  }
+}

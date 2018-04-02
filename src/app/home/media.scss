@@ -22,6 +22,12 @@
   }
 }
 
+@media screen and (min-width: 1870px) {
+  .carousel>div {
+    height: 680px;
+  }
+}
+
 @media screen and (max-width: 1220px) {
   .list-item>a {
     padding: 0 10px;
