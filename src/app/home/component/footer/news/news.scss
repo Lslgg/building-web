@@ -28,6 +28,9 @@
       text-overflow: ellipsis;
       margin-bottom: 5px;
       cursor: pointer;
+      a {
+        color:inherit;
+      }
       &:hover {
         color: #FE5454;
       }

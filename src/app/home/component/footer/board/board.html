@@ -1,7 +1,5 @@
-<div class="board-row">
-  <a class="board" (mouseenter)="onEnter()" (mouseleave)="onLeave()" href="#">
-    <span>某某装饰——精益求精</span>
-    <a href="#" class="board sf-board" [@state]="state" (@state.done)="animationDone($event)">
-    </a>
+<a class="board" (mouseenter)="onEnter()" (mouseleave)="onLeave()" href="#">
+  某某装饰——精益求精
+  <a href="#" class="board sf-board" [@state]="state" (@state.done)="animationDone($event)">
   </a>
-</div>
+</a>

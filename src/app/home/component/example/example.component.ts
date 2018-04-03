@@ -16,9 +16,4 @@ export class ExampleComponent implements OnInit {
 
     }
 
-    onEnter() {
-        console.log('111');
-        // this.flag = false;
-    }
-
 }

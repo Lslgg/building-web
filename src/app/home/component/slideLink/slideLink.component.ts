@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
-    selector: 'home-board',
-    templateUrl: 'board.html',
-    styleUrls: ['board.scss'],
+    selector: 'home-slide-link',
+    templateUrl: 'slideLink.html',
+    styleUrls: ['slideLink.scss'],
     animations: [
         trigger('state', [
             state('inactive', style({
@@ -27,7 +27,9 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ]
 })
 
-export class BoardComponent implements OnInit {
+export class SlideLinkComponent implements OnInit {
+
+    @Input() title: String = '';
 
     state: String = 'void';
 

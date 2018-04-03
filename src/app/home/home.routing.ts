@@ -19,6 +19,13 @@ import { SlideComponent } from './component/slide/slide.component';
 import { ServiceComponent } from './component/service/service.component';
 import { TeamComponent } from './component/team/team.component';
 import { ExampleComponent } from './component/example/example.component';
+import { SlideLinkComponent } from './component/slideLink/slideLink.component';
+import { EliteComponent } from './component/elite/elite.component';
+import { ServiceSectionComponent } from './component/service-section/serviceSection.component';
+import { EliteBoxComponent } from './component/elite/eliteBox/eliteBox.component';
+import { ContactSectionComponent } from './component/contactSection/contactSection.conponent';
+import { NewsSectionComponent } from './component/newsSection/newsSection.component';
+import { BrandComponent } from './component/brand/brand.comonent';
 
 var routesList: Routes = [
 ];
@@ -56,5 +63,12 @@ export const routedComponents = [
     SlideComponent,
     ServiceComponent,
     TeamComponent,
-    ExampleComponent
+    ExampleComponent,
+    SlideLinkComponent,
+    EliteComponent,
+    ServiceSectionComponent,
+    EliteBoxComponent,
+    ContactSectionComponent,
+    NewsSectionComponent,
+    BrandComponent
 ];

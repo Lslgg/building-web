@@ -1,19 +1,21 @@
-.board {
-  display: block;
-  max-width: 290px;
-  padding: 15px 0 17px;
+.slide-link {
+  display: inline-block;
   color: #fff;
-  font-size: 20px;
+  height: 37px;
+  font-size: 13px;
+  line-height: 37px;
   font-weight: 900;
+  background-color: transparent;
   margin: 0 auto;
   cursor: pointer;
   position: relative;
-  background-color: #FE5454;
   z-index: 100;
   transition: color 0.5s ease;
+  border: 1px solid #4C7B96;
   text-align: center;
+  padding: 0 35px;
   &:hover {
-    color: #FE5454;
+    border-color: transparent;
   }
 }
 
@@ -22,10 +24,10 @@
   top: 0;
   left: 0;
   width: 0;
-  height: 51px;
+  height: 37px;
   overflow: hidden;
   white-space: nowrap;
-  background-color: #fff;
-  color: #FE5454;
+  background-color: #FE5454;
+  color: #fff;
   z-index: -1;
 }

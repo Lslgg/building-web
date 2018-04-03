@@ -1,0 +1,9 @@
+<a class="elite-box" href="#" (mouseenter)="onEnter()" (mouseleave)="onLeave()">
+  <div class="img-box">
+    <img src="assets/building-img/1-1P224123241W4.jpg">
+  </div>
+  <div class="text-box">
+    <h2>设计部主管</h2>
+    <div class="sf-box" [@state]="state" (@state.done)="animationDone($event)"></div>
+  </div>
+</a>

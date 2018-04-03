@@ -1,0 +1,63 @@
+.elite-box {
+  display: block;
+  padding-top: 10px;
+  position: relative;
+  transition: padding 0.5s ease;
+  cursor: pointer;
+  .img-box {
+    // height: 187px;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .text-box {
+    height: 52px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    background-color: #FE5454;
+    z-index: 100;
+    h2 {
+      color: inherit;
+      font-size: 16px;
+      line-height: 52px;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 0 15px;
+      font-weight: bold;
+    }
+    .sf-box {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: #51B7E3;
+      z-index: -1;
+    }
+  }
+  &:hover {
+    padding-top: 0;
+    &:before {
+      opacity: 1;
+    }
+  }
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    bottom: -15px;
+    background: #2098d1;
+    transform: scaleY(1);
+    transform-origin: 50% 0;
+    opacity: 0;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    transition: opacity 0.5s ease;
+  }
+}

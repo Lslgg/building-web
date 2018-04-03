@@ -1,0 +1,5 @@
+<a class="slide-link" href="#" (mouseenter)="onEnter()" (mouseleave)="onLeave()">
+  {{title}}
+  <a href="#" class="board sf-board" [@state]="state" (@state.done)="animationDone($event)">
+  </a>
+</a>

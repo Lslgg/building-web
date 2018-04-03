@@ -2,22 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
-    selector: 'home-board',
-    templateUrl: 'board.html',
-    styleUrls: ['board.scss'],
+    selector: 'home-elite-box',
+    templateUrl: 'eliteBox.html',
+    styleUrls: ['./eliteBox.scss'],
     animations: [
         trigger('state', [
             state('inactive', style({
-                width: '0'
+                height: '0'
             })),
             state('popup', style({
-                width: '90%'
+                height: '90%'
             })),
             state('down', style({
-                width: '100%'
+                height: '100%'
             })),
             state('active', style({
-                width: '100%'
+                height: '100%'
             })),
             transition('* => active', animate('200ms ease-in')),
             transition('active => popup', animate('150ms ease-in')),
@@ -27,7 +27,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ]
 })
 
-export class BoardComponent implements OnInit {
+export class EliteBoxComponent implements OnInit {
 
     state: String = 'void';
 
@@ -52,4 +52,5 @@ export class BoardComponent implements OnInit {
             this.state = 'down';
         }
     }
+
 }

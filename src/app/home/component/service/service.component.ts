@@ -4,7 +4,7 @@ import { trigger, state, style, animate, transition, keyframes } from '@angular/
 @Component({
     selector: 'home-service',
     templateUrl: 'service.html',
-    styleUrls: ['./service.scss'],
+    styleUrls: ['./service.scss','../../media.scss'],
     animations: [
         trigger('mouseState', [
             state('enter', style({
