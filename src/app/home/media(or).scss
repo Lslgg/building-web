@@ -10,10 +10,12 @@
   }
   .brand-row {
     .img-box {
-      width: 18%;
-      margin: 0 1% 0 1%;
+      width: 20%;
     }
   }
+}
+
+@media screen and (min-width: 992px) {
   .news-section {
     .content-col {
       height: 268px;
@@ -24,43 +26,25 @@
       height: 320px;
     }
   }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1199px) {
-  .list-item>a {
-    padding: 0 10px;
-  }
   .brand-row {
     .img-box {
-      width: 31.333%;
-      margin: 0 1% 0 1%;
+      width: 33.333%;
     }
   }
 }
 
-@media screen and (min-width: 577px) and (max-width: 768px) {
-  .elite {
-    .elite-col {
-      width: 50%;
-    }
-  }
+
+//~~~~~
+@media screen and (max-width: 576px) {
   .brand-row {
     .img-box {
-      width: 48%;
-      margin: 0 1% 0 1%;
+      width: 100%;
     }
   }
 }
 
-@media screen and (max-width: 575px) {
-  .brand-row {
-    .img-box {
-      width: 98%;
-      margin: 0 1% 0 1%;
-    }
-  }
-}
 
+//!!
 @media screen and (min-width: 1800px) {
   .footer>.container {
     max-width: 1370px;
@@ -70,8 +54,28 @@
   }
 }
 
+
+
+//~~~~~
 @media screen and (max-width: 1800px) {
   .list-item>a {
     padding: 0 12px;
+  }
+}
+
+
+//~~~~~
+@media screen and (max-width: 1200px) {
+  .list-item>a {
+    padding: 0 10px;
+  }
+}
+
+//~~~~~
+@media screen and (min-width: 400px) and (max-width: 768px) {
+  .elite {
+    .elite-col {
+      width: 50%;
+    }
   }
 }

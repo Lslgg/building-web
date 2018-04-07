@@ -7,10 +7,11 @@
     .row {
       margin: 0 35px;
       overflow: hidden;
-      div {
+      .brand-col {
         white-space: nowrap;
         background-color: #fff;
         padding: 0;
+        font-size: 0;
       }
     }
     .arrow {
@@ -35,9 +36,20 @@
     .img-box {
       display: inline-block;
       vertical-align: middle;
+      padding: 10px;
+      border: 1px #ddd solid;
       img {
         width: 100%;
+        &:hover {
+          opacity: .3 !important;
+          filter: alpha(opacity=30);
+          -webkit-transition: all .3s ease;
+          transition: all .3s ease;
+        }
       }
     }
+  }
+  .col-ani {
+    transition: margin 0.2s ease;
   }
 }
