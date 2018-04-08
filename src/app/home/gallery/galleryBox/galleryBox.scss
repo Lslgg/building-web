@@ -1,0 +1,23 @@
+.gallery-box {
+  .img-box {
+    width: 100%;
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+  }
+  h5 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #282828;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.4;
+    text-align: center;
+    margin: 20px 0;
+    a {
+      color: inherit;
+    }
+  }
+}

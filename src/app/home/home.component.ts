@@ -10,8 +10,6 @@ export class HomeComponent implements OnInit {
 
     flag: Boolean = false;
 
-    imgList: Array<String> = ['assets/building-img/1-1P2241022140-L.jpg', 'assets/building-img/1-1P2241022380-L.jpg', 'assets/building-img/1-1P2241023190-L.jpg'];
-
     constructor() { }
 
     ngOnInit() { }

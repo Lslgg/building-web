@@ -1,0 +1,38 @@
+.hot-item {
+  font-size: 0;
+  border-bottom: 1px solid #E8E9EF;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  .img-box {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40%;
+    max-width: 110px;
+    padding: 0 20px 0 0;
+    img {
+      width: 100%;
+    }
+  }
+  .text-box {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60%;
+    vertical-align: top;
+    font-size: 14px;
+    padding-top: 5px;
+    color: #282828;
+    a {
+      color: inherit;
+      display: block;
+      transition: color 0.1s ease;
+      margin-bottom: 10px;
+      &:hover {
+        color: #FE5454;
+      }
+    }
+    span {
+      display: block;
+      font-size: 12px;
+    }
+  }
+}

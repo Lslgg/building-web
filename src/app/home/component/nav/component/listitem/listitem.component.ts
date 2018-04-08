@@ -8,7 +8,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 export class ListItemComponent implements OnInit {
 
-    @Input() title: String = 'test';
+    @Input() link: String = '/';
+
+    @Input() title: String = '';
 
     @Input() secondList: Array<{ link: String, title: String }> = null;
 

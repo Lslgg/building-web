@@ -19,6 +19,7 @@
   display: inline-block;
   vertical-align: middle;
   width: auto;
+  z-index: 50;
   cursor: pointer;
   .drop-menu {
     display: none;
@@ -99,8 +100,8 @@
     }
   }
   &:hover {
+    z-index: 5000;
     .drop-menu {
-      // display: block;
       visibility: visible;
       opacity: 1;
       top: 84px;

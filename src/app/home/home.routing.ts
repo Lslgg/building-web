@@ -26,8 +26,24 @@ import { EliteBoxComponent } from './component/elite/eliteBox/eliteBox.component
 import { ContactSectionComponent } from './component/contactSection/contactSection.conponent';
 import { NewsSectionComponent } from './component/newsSection/newsSection.component';
 import { BrandComponent } from './component/brand/brand.comonent';
+import { IndexRoutes, IndexRoutedComponents } from './index/index.routing';
+import { SearchNewsComponent } from './component/searchNews/searchNews.component';
+import { HotComponent } from './component/hot/hot.component';
+import { ArticleRoutes, ArticleRoutedComponents } from './article/about.routing';
+import { GalleryRoutedComponents, GalleryRoutes } from './gallery/gallery.routing';
+import { HotItemComponent } from './component/hot/hotItem/hotItem.component';
+import { GalleryBoxComponent } from './gallery/galleryBox/galleryBox.component';
+import { PicRowComponent } from './component/picRow/picrow.component';
+import { PageBoxComponent } from './component/pageBox/pageBox.component';
+import { NewsRoutes, NewsRoutedComponents } from './news/news.routing';
+import { ContactRoutes, ContactRoutedComponents } from './contact/contact.routing';
 
 var routesList: Routes = [
+    ...IndexRoutes,
+    ...ArticleRoutes,
+    ...GalleryRoutes,
+    ...NewsRoutes,
+    ...ContactRoutes
 ];
 
 const routes: Routes = [
@@ -70,5 +86,16 @@ export const routedComponents = [
     EliteBoxComponent,
     ContactSectionComponent,
     NewsSectionComponent,
-    BrandComponent
+    BrandComponent,
+    IndexRoutedComponents,
+    ArticleRoutedComponents,
+    SearchNewsComponent,
+    HotComponent,
+    HotItemComponent,
+    GalleryRoutedComponents,
+    GalleryBoxComponent,
+    PicRowComponent,
+    PageBoxComponent,
+    NewsRoutedComponents,
+    ContactRoutedComponents
 ];

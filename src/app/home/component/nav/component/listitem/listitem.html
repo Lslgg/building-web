@@ -1,6 +1,6 @@
 <ng-container *ngIf="!isSearch">
   <li class="list-item">
-    <a href="#">{{title}}</a>
+    <a href="{{link}}">{{title}}</a>
     <ng-container *ngIf="secondList">
       <div class="list-arrow">
         <i class="fa fa-caret-down"></i>
@@ -8,7 +8,7 @@
       <div class="drop-menu">
         <ul>
           <li *ngFor="let item of secondList">
-            <a href='#'>{{item.title}}</a>
+            <a href='{{item.link}}'>{{item.title}}</a>
           </li>
         </ul>
       </div>

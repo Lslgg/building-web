@@ -1,0 +1,30 @@
+.page-box {
+  text-align: center;
+  font-size: 0;
+  .box {
+    display: inline-block;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    margin: 0 3px;
+    background: #fff;
+    color: #999;
+    cursor: pointer;
+    a {
+      display: inline-block;
+      vertical-align: middle;
+      color: inherit;
+      padding: 4px 10px;
+      line-height: 20px;
+      width: 100%;
+      height: 100%;
+    }
+    &:hover {
+      background-color: #ccc;
+    }
+  }
+}
+
+.box-active {
+  background-color: #ccc !important;
+  pointer-events: none;
+}

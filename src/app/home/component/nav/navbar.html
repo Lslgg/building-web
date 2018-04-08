@@ -8,21 +8,20 @@
             <img src="assets/img/logo.png" />
           </a>
         </div>
-        <span class="nav-btm d-block d-sm-none">
+        <span class="nav-btm d-block d-lg-none">
           <i class="fa fa-bars"></i>
         </span>
       </div>
-      <div class="menu-col col-lg-9 col-xl-7  col-sm-12 col-md-12  d-none d-sm-block">
+      <div class="menu-col col-lg-9 col-xl-7  col-sm-12 col-md-12  d-none d-lg-block">
         <nav>
           <ul>
-            <home-list-item title="网站首页"></home-list-item>
-            <home-list-item title="网站首页" [secondList]="list"></home-list-item>
-            <home-list-item title="网站首页" [secondList]="list"></home-list-item>
-            <home-list-item title="网站首页" [secondList]="list"></home-list-item>
-            <home-list-item title="网站首页" [secondList]="list"></home-list-item>
-            <home-list-item title="网站首页" [secondList]="list"></home-list-item>
-            <home-list-item title="网站首页" [secondList]="list"></home-list-item>
-            <home-list-item title="网站首页" [secondList]="list"></home-list-item>
+            <home-list-item link="/" title="网站首页"></home-list-item>
+            <home-list-item link="home/article/test" title="关于我们" [secondList]="aboutList"></home-list-item>
+            <home-list-item title="定制案例"></home-list-item>
+            <home-list-item link="home/news/1" title="新闻资讯"></home-list-item>
+            <home-list-item title="服务优势" [secondList]="serviceList"></home-list-item>
+            <home-list-item title="精英团队" [secondList]="eliteList"></home-list-item>
+            <home-list-item link="/home/contact" title="联系我们"></home-list-item>
             <home-list-item isSearch=true (onClick)="onClick()"></home-list-item>
           </ul>
         </nav>

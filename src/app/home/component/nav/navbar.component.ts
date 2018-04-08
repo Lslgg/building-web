@@ -8,7 +8,9 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 export class NavBarComponent implements OnInit {
 
-    list: Array<{ link: String, title: String }> = [{ link: "test", title: "公司简介" }, { link: "test", title: "品牌起源" }, { link: "test", title: "产品简介" }];
+    aboutList: Array<{ link: String, title: String }> = [{ link: "home/article/test", title: "公司简介" }, { link: "home/article/test", title: "品牌起源" }, { link: "home/gallery/test/1", title: "公司相册" }];
+    serviceList: Array<{ link: String, title: String }> = [{ link: "test", title: "专业的服务团队" }, { link: "test", title: "专业的施工团队" }];
+    eliteList: Array<{ link: String, title: String }> = [{ link: "test", title: "设计团队" }, { link: "test", title: "施工团队" }, { link: "test", title: "管理团队" }];
 
     flag: Number = 0;
 
