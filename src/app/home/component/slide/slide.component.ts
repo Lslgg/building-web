@@ -23,7 +23,7 @@ import { setInterval } from 'timers';
 export class SlideComponent implements OnInit {
 
     @Input() list: Array<String> = [];
-    @Input() toNextImg: Boolean = false;
+    @Input() toNextImg: Boolean = true;
     @Input() startIndex: Number = 0;
     strArr: Array<String> = [];
     ponintArray: Array<boolean> = [];
@@ -136,9 +136,7 @@ export class SlideComponent implements OnInit {
             this.strArr.push(this.list[0]);
         }
         var l = 1;
-        while (l < this.startIndex) {
-            // this.toggleState(1);       
-            // i++;
+        while (l < this.startIndex) {            
             var t = this.strArr[1];
             for (var i = 1; i < this.strArr.length - 1; i++) {
                 this.strArr[i] = this.strArr[i + 1];

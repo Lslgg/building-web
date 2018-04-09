@@ -1,4 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
 
 @Component({
     selector: 'home-home',
@@ -10,7 +12,7 @@ export class HomeComponent implements OnInit {
 
     flag: Boolean = false;
 
-    constructor() { }
+    constructor(private apollo: Apollo) { }
 
     ngOnInit() { }
 
@@ -21,5 +23,15 @@ export class HomeComponent implements OnInit {
         } else {
             this.flag = false;
         }
+    }
+
+    test() {
+        this.apollo.query<{list:any}>({
+            query: gql`query {
+                
+            }`
+        }).subscribe(({ data }) => {
+            console.log(data);
+        });
     }
 }

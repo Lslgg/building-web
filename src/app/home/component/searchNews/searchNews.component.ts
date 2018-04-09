@@ -11,4 +11,8 @@ export class SearchNewsComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { }
+
+    onEnter(info: String) {
+        console.log(info);
+    }
 }

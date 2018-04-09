@@ -8,7 +8,7 @@
             <img src="assets/img/logo.png" />
           </a>
         </div>
-        <span class="nav-btm d-block d-lg-none">
+        <span class="nav-btm d-block d-lg-none" (click)="toggleTap()">
           <i class="fa fa-bars"></i>
         </span>
       </div>
@@ -27,5 +27,38 @@
         </nav>
       </div>
     </div>
+  </div>
+</div>
+<div class="tap-wrapper d-block d-lg-none" [class.display-none]="!tabFlag" (click)="toggleTap()"></div>
+<div class="nav-tap d-block d-lg-none" [class.nav-top-open]="tabFlag">
+  <div class="box">
+    <h3>
+      网站导航
+    </h3>
+    <div class="icon-row">
+      <a href="javascript:void(0);" (click)="toggleTap()">
+        <i class="fa fa-close"></i>
+      </a>
+      <a href="#">
+        <i class="fa fa-weibo"></i>
+      </a>
+      <a href="#">
+        <i class="fa fa-tencent-weibo"></i>
+      </a>
+    </div>
+    <div class="input-row">
+      <input type="text" placeholder="输入关键字..." #data (keyup.enter)="onEnter(data.value)">
+    </div>
+    <nav class="nav-phone">
+      <ul>
+        <li class="home-list-phone" link="/" title="网站首页"></li>
+        <li class="home-list-phone" link="home/article/test" title="关于我们" [secondList]="aboutList"></li>
+        <li class="home-list-phone" title="定制案例" [secondList]="nullList"></li>
+        <li class="home-list-phone" link="home/news/1" title="新闻资讯" [secondList]="nullList"></li>
+        <li class="home-list-phone" title="服务优势" [secondList]="serviceList"></li>
+        <li class="home-list-phone" title="精英团队" [secondList]="eliteList"></li>
+        <li class="home-list-phone" link="/home/contact" title="联系我们" [secondList]="nullList"></li>
+      </ul>
+    </nav>
   </div>
 </div>

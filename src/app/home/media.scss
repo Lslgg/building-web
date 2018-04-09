@@ -48,9 +48,17 @@
       margin: 0 1% 0 1%;
     }
   }
+  .nav-tap {
+    width: 400px;
+    right: -400px;
+  }
 }
 
 @media screen and (min-width: 577px) and (max-width: 768px) {
+  .nav-tap {
+    width: 400px;
+    right: -400px;
+  }
   .elite {
     .elite-col {
       width: 50%;
@@ -70,6 +78,10 @@
       width: 98%;
       margin: 0 1% 0 1%;
     }
+  }
+  .nav-tap {
+    width: 300px;
+    right: -300px;
   }
 }
 

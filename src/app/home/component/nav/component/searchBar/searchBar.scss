@@ -1,7 +1,7 @@
 .search-bar {
   background-color: #FE5454;
   overflow: hidden;
-  height: 65px;
+  height: 0;
   transition: height 1s ease;
   .container {
     .input-col {
@@ -34,6 +34,6 @@
   }
 }
 
-.no-height {
-  height: 0;
+.open-bar {
+  height: 65px;
 }

@@ -8,11 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class SearchBarComponent implements OnInit {
 
-    toggle: boolean = true;
+    toggle: boolean = false;
 
     @Input()
     set flag(flag: Number) {
-        if (flag > 0) {
+        if (flag && flag > 0) {
             this.move();
         }
     }
@@ -23,5 +23,9 @@ export class SearchBarComponent implements OnInit {
 
     move() {
         this.toggle = !this.toggle;
+    }
+
+    onEnter(info: String) {
+        console.log(info);
     }
 }

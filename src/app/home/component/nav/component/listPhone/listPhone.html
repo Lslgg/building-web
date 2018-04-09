@@ -1,0 +1,15 @@
+<li class="list-phone-item">
+  <a href="{{link}}">{{title}}</a>
+  <ng-container *ngIf="secondList">
+    <div class="open-buttom" (click)="onClick()">
+      <i class="fa fa-angle-right" [class.angle-90]="flag"></i>
+    </div>
+    <ul class="second-list">
+      <ng-container *ngFor="let item of secondList">
+        <li [style.height.px]="flag ? 40 : 0 ">
+          <a href="{{item.link}}">{{item.title}}</a>
+        </li>
+      </ng-container>
+    </ul>
+  </ng-container>
+</li>
