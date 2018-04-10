@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
 
 @Component({
     selector: 'home-hot',
@@ -8,7 +10,18 @@ import { Component, OnInit } from '@angular/core';
 
 export class HotComponent implements OnInit {
 
-    constructor() { }
+    constructor(private apollo: Apollo) { }
 
     ngOnInit() { }
+
+    // 查询 热门新闻X3
+    getData() {
+        this.apollo.query<{ list: any }>({
+            query: gql`query {
+                    
+                }`
+        }).subscribe(({ data }) => {
+            console.log(data);
+        });
+    }
 }

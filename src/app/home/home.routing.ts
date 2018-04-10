@@ -37,6 +37,7 @@ import { PicRowComponent } from './component/picRow/picrow.component';
 import { PageBoxComponent } from './component/pageBox/pageBox.component';
 import { NewsRoutes, NewsRoutedComponents } from './news/news.routing';
 import { ContactRoutes, ContactRoutedComponents } from './contact/contact.routing';
+import { ListPhoneComponent } from './component/nav/component/listPhone/listPhone.component';
 
 var routesList: Routes = [
     ...IndexRoutes,
@@ -97,5 +98,6 @@ export const routedComponents = [
     PicRowComponent,
     PageBoxComponent,
     NewsRoutedComponents,
-    ContactRoutedComponents
+    ContactRoutedComponents,
+    ListPhoneComponent
 ];

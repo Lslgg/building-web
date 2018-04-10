@@ -1,8 +1,8 @@
 <aside class="search-news">
   <h3>站内搜索</h3>
   <div>
-    <input type="text" placeholder="输入关键字">
-    <span>
+    <input type="text" placeholder="输入关键字" #data (keyup.enter)="onEnter(data.value)">
+    <span (click)="onEnter(data.value)">
       <i class="fa fa-search"></i>
     </span>
   </div>
