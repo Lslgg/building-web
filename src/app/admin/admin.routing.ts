@@ -7,11 +7,13 @@ import { HeaderComponent, SideNavComponent } from './layouts';
 import { MainRoutes, MainComponentList } from './main/main.routing';
 import { NotFindPageRoutes, NotFindPageComponentList } from '../component/404/notFindPage.routing';
 import { systemRoutes, SystemList } from './system/system.routing';
+import { BuildingRoutes, BuildingList } from './building/building.routing';
 
 
 var routes: Routes = [
   ...MainRoutes, //首页
   ...systemRoutes, //系统管理
+  ...BuildingRoutes, //建筑
   ...NotFindPageRoutes //错误页面请放最后
 ];
 
@@ -39,6 +41,7 @@ export const ComponentList = [
   SideNavComponent,
   AdminComponent,
   MainComponentList,
-  NotFindPageComponentList,
   SystemList,
+  BuildingList,
+  NotFindPageComponentList,
 ]

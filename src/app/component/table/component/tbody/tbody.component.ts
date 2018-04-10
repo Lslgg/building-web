@@ -64,6 +64,7 @@ export class TbodyComponent implements OnInit {
     //获取分页控件
     @ContentChild(PagiationComponent) Pagiation: PagiationComponent;
 
+    @Output() onData = new EventEmitter<Boolean>();
 
     //表格头部信息根据这信息来处理表格
     rowNameList: Array<{
@@ -120,18 +121,19 @@ export class TbodyComponent implements OnInit {
             this.pageCount = count;
             this.thead.dataList = this.dataList;
             this.findTotal(total);
+            this.onData.emit(true);
         }
     }
 
     //查找统计
     private findTotal(total: any) {
-        if(!total) return ;
+        if (!total) return;
         let keys = Object.keys(total);
         for (var i = 0, num = keys.length; i < num; i++) {
             var info = this.totalList[i];
             if (info && info.name == keys[i]) {
-                var sum=total[info.name];
-                info.total = sum?sum:0;
+                var sum = total[info.name];
+                info.total = sum ? sum : 0;
             }
         }
 

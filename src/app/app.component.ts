@@ -31,23 +31,23 @@ export class AppComponent {
       }),
       cache: new InMemoryCache()
     });
-    this.setWebSiteTitle();
+    // this.setWebSiteTitle();
   }
 
-  private setWebSiteTitle() {
-    this.apollo.query<{ contactInfo: any }>({
-      query: gql`query{
-          contactInfo:getContactInfo {
-              title
-          },
-      }`,
-    }).subscribe(({ data }) => {
-      if (data.contactInfo && data.contactInfo[0]) {
-        this.titleService.setTitle(data.contactInfo[0].title);
-      } else {
-        this.titleService.setTitle('未定义');
-      }
-    });
-  }
+  // private setWebSiteTitle() {
+  //   this.apollo.query<{ contactInfo: any }>({
+  //     query: gql`query{
+  //         contactInfo:getContactInfo {
+  //             title
+  //         },
+  //     }`,
+  //   }).subscribe(({ data }) => {
+  //     if (data.contactInfo && data.contactInfo[0]) {
+  //       this.titleService.setTitle(data.contactInfo[0].title);
+  //     } else {
+  //       this.titleService.setTitle('未定义');
+  //     }
+  //   });
+  // }
 
 }
