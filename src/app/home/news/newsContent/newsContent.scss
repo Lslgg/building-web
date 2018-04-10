@@ -1,0 +1,27 @@
+.home-news-content {
+  padding: 45px 0;
+  background-color: #fff;
+  h3 {
+    margin-top: 0;
+    font-size: 23px;
+    letter-spacing: normal;
+    color: inherit;
+    text-align: center;
+  }
+  .info {
+    text-align: center;
+    font-size: 14px;
+    margin: 20px 0;
+    line-height: 28px;
+    i {
+      font-size: 16px;
+    }
+    a {
+      &:hover {
+        color: #F16543;
+      }
+      color: inherit;
+    }
+  }
+  .content {}
+}

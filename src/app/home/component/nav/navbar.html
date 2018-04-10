@@ -17,10 +17,10 @@
           <ul>
             <home-list-item link="/" title="网站首页"></home-list-item>
             <home-list-item link="home/article/test" title="关于我们" [secondList]="aboutList"></home-list-item>
-            <home-list-item title="定制案例"></home-list-item>
+            <home-list-item link="/home/gallery/test/1" title="定制案例"></home-list-item>
             <home-list-item link="home/news/1" title="新闻资讯"></home-list-item>
-            <home-list-item title="服务优势" [secondList]="serviceList"></home-list-item>
-            <home-list-item title="精英团队" [secondList]="eliteList"></home-list-item>
+            <home-list-item link="home/article/test" title="服务优势" [secondList]="serviceList"></home-list-item>
+            <home-list-item link="/home/gallery/test/1" title="精英团队" [secondList]="eliteList"></home-list-item>
             <home-list-item link="/home/contact" title="联系我们"></home-list-item>
             <home-list-item isSearch=true (onClick)="onClick()"></home-list-item>
           </ul>
@@ -52,11 +52,11 @@
     <nav class="nav-phone">
       <ul>
         <li class="home-list-phone" link="/" title="网站首页"></li>
-        <li class="home-list-phone" link="home/article/test" title="关于我们" [secondList]="aboutList"></li>
-        <li class="home-list-phone" title="定制案例" [secondList]="nullList"></li>
-        <li class="home-list-phone" link="home/news/1" title="新闻资讯" [secondList]="nullList"></li>
+        <li class="home-list-phone" link="/home/article/test" title="关于我们" [secondList]="aboutList"></li>
+        <li class="home-list-phone" link="/home/gallery/test/1" title="定制案例" [secondList]="nullList"></li>
+        <li class="home-list-phone" link="/home/news/1" title="新闻资讯" [secondList]="nullList"></li>
         <li class="home-list-phone" title="服务优势" [secondList]="serviceList"></li>
-        <li class="home-list-phone" title="精英团队" [secondList]="eliteList"></li>
+        <li class="home-list-phone" link="/home/gallery/test/1" title="精英团队" [secondList]="eliteList"></li>
         <li class="home-list-phone" link="/home/contact" title="联系我们" [secondList]="nullList"></li>
       </ul>
     </nav>

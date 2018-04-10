@@ -18,6 +18,13 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       font-weight: bold;
+      transition: color 0.3s ease;
+      &:hover {
+        color: #324CBC;
+      }
+      a {
+        color: inherit;
+      }
     }
     .list-box {
       width: 100%;
@@ -44,6 +51,12 @@
           span {
             font-size: 12px;
             font-weight: 500;
+            a {
+              color: inherit;
+              &:hover {
+                color: #F16543;
+              }
+            }
           }
         }
       }
