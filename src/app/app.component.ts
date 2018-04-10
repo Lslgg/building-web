@@ -34,11 +34,7 @@ export class AppComponent {
     // this.setWebSiteTitle();
   }
 
-<<<<<<< HEAD
   // private setWebSiteTitle() {
-=======
-  private setWebSiteTitle() {
->>>>>>> db0425b1c9ca640b65fe2d586fd80540e16f1393
   //   this.apollo.query<{ contactInfo: any }>({
   //     query: gql`query{
   //         contactInfo:getContactInfo {
