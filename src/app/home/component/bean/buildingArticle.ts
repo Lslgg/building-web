@@ -6,5 +6,4 @@ export class BuildingArticle {
     imagesIds: [String];
     content: String;
     desc: String;
-
 }

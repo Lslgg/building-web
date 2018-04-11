@@ -3,13 +3,14 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-9 col-xl-9">
-        <home-news-item></home-news-item>
-        <home-news-item></home-news-item>
-        <home-news-item></home-news-item>
-        <home-news-item></home-news-item>
-        <home-news-item></home-news-item>
-        <home-news-item></home-news-item>
-        <home-news-item></home-news-item>
+        <ng-container *ngFor="let item of newsList">
+          <home-news-item></home-news-item>
+        </ng-container>
+        <div class="row">
+          <div class="col-12">
+            <home-page-box [size]="pageSize" [count]="count" [url]="url"></home-page-box>
+          </div>
+        </div>
       </div>
       <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
         <home-search-news></home-search-news>

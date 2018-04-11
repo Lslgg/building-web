@@ -3,6 +3,7 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { ActivatedRoute } from '@angular/router';
 import { BuildingArticle } from '../component/bean/buildingArticle';
+import { BuildingImages } from '../component/bean/buildingImages';
 
 @Component({
     selector: 'home-article',
@@ -14,10 +15,15 @@ export class ArticleComponent implements OnInit {
 
     type: String = '';
 
+    column: String = '';
+
     content: String = '';
+
+    img: String = '';
 
     constructor(private apollo: Apollo, private route: ActivatedRoute) {
         this.type = this.route.snapshot.params['type'];
+        this.column = this.route.snapshot.params['column'];
     }
 
     ngOnInit() {
@@ -26,17 +32,24 @@ export class ArticleComponent implements OnInit {
 
     // 查询 栏目图片 文章内容 
     getData() {
-        this.apollo.query<{ article: BuildingArticle }>({
-            query: gql`query($type:Json) {
+        this.apollo.query<{ article: BuildingArticle, img: BuildingImages }>({
+            query: gql`query($type:Json,$type2:Json) {
                 article: getBuildingArticleWhere(buildingArticle:{type:$type}) {
                     id,type,title,author,content,desc,imagesIds:Images{id,path},createAt
                 }
+                img:getBuildingImagesWhere(buildingImages:{type:$type2}){
+                    id,imagesIds:Images{id,path}
+                }
             }`,
-            variables: { type: `{ "$eq": "${this.type}" }` }
+            variables: { type: `{ "$eq": "${this.type}" }`, type2: `{ "$eq": "${this.column}" }` }
         }).subscribe(({ data }) => {
             if (data && data.article && data.article[0]) {
                 this.content = data.article[0].content;
             }
+            if (data && data.img && data.img[0]) {
+                this.img = data.img[0].imagesIds[0].path;
+            }
+            console.log(this.img);
         });
     }
 }

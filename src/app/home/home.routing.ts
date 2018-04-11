@@ -29,7 +29,7 @@ import { BrandComponent } from './component/brand/brand.comonent';
 import { IndexRoutes, IndexRoutedComponents } from './index/index.routing';
 import { SearchNewsComponent } from './component/searchNews/searchNews.component';
 import { HotComponent } from './component/hot/hot.component';
-import { ArticleRoutes, ArticleRoutedComponents } from './article/about.routing';
+import { ArticleRoutes, ArticleRoutedComponents } from './article/article.routing';
 import { GalleryRoutedComponents, GalleryRoutes } from './gallery/gallery.routing';
 import { HotItemComponent } from './component/hot/hotItem/hotItem.component';
 import { GalleryBoxComponent } from './gallery/galleryBox/galleryBox.component';
