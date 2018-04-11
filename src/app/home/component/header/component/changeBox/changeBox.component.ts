@@ -10,6 +10,8 @@ export class ChangeBoxComponent implements OnInit {
 
     @Input() iconName: String;
 
+    @Input() link: String = '';
+
     constructor() { }
 
     ngOnInit() { }

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'home-list-item',
+    selector: '.home-list-item',
     templateUrl: 'listItem.html',
     styleUrls: ['./listItem.scss', '../../../../media.scss']
 })

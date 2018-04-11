@@ -4,7 +4,7 @@ import { GalleryComponent } from './gallery.component';
 
 export const GalleryRoutes: Routes = [
     {
-        path: 'gallery/:type/:index', component: GalleryComponent, data: { title: '英德市华诚装饰设计有限公司', module: 'none', power: "none" },
+        path: 'gallery/:column/:type/:index', component: GalleryComponent, data: { title: '英德市华诚装饰设计有限公司', module: 'none', power: "none" },
     }
 ];
 

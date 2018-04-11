@@ -1,4 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { BuildingMenu } from '../bean/buildingMenu';
+import { BuildingImages } from '../bean/buildingImages';
 
 @Component({
     selector: 'home-navbar',
@@ -8,16 +10,43 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 export class NavBarComponent implements OnInit {
 
+    @Input() firstMenu: Array<BuildingMenu>;
+    @Input()
+    set secondMenu(secondMenu: Array<BuildingMenu>) {
+        if (secondMenu) {
+            this.getSecondMenu(secondMenu);
+        }
+    }
+    @Input() logo: BuildingImages;
+    aboutList: Array<BuildingMenu> = [];
+    serviceList: Array<BuildingMenu> = [];
+    eliteList: Array<BuildingMenu> = [];
     tabFlag: Boolean = false;
-    aboutList: Array<{ link: String, title: String }> = [{ link: "/home/article/test", title: "公司简介" }, { link: "/home/article/test", title: "品牌起源" }, { link: "/home/gallery/test/1", title: "公司相册" }];
-    serviceList: Array<{ link: String, title: String }> = [{ link: "/home/article/test", title: "专业的服务团队" }, { link: "/home/article/test", title: "专业的施工团队" }];
-    eliteList: Array<{ link: String, title: String }> = [{ link: "/home/gallery/test/1", title: "设计团队" }, { link: "/home/gallery/test/1", title: "施工团队" }, { link: "/home/gallery/test/1", title: "管理团队" }];
     nullList: Array<{ link: String, title: String }> = [];
     flag: Number = 0;
 
     constructor() { }
 
     ngOnInit() { }
+
+    getSecondMenu(secondMenu: Array<BuildingMenu>) {
+        this.aboutList = [];
+        this.serviceList = [];
+        this.eliteList = [];
+        for (let i = 0; i < secondMenu.length; i++) {
+            switch (secondMenu[i].parentId) {
+                case '5acd666554239d2c34c82464':
+                    this.aboutList.push(secondMenu[i]);
+                    break;
+                case '5acd668154239d2c34c82467':
+                    this.serviceList.push(secondMenu[i]);
+                    break;
+                case '5acd668954239d2c34c82468':
+                    this.eliteList.push(secondMenu[i]);
+                    break;
+            }
+        }
+    }
 
     toggleTap() {
         this.tabFlag = !this.tabFlag;

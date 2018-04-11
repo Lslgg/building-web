@@ -5,7 +5,8 @@
       <div class="icon-col col-sm-12 col-md-12 col-lg-3 col-xl-5">
         <div class="logobox" href="#">
           <a href="#">
-            <img src="assets/img/logo.png" />
+            <!-- <img src="assets/img/logo.png" /> -->
+            <img *ngIf="logo" src="127.0.0.1:8080/{{logo.imagesIds[0].path}}" />
           </a>
         </div>
         <span class="nav-btm d-block d-lg-none" (click)="toggleTap()">
@@ -14,15 +15,15 @@
       </div>
       <div class="menu-col col-lg-9 col-xl-7  col-sm-12 col-md-12  d-none d-lg-block">
         <nav>
-          <ul>
-            <home-list-item link="/" title="网站首页"></home-list-item>
-            <home-list-item link="home/article/test" title="关于我们" [secondList]="aboutList"></home-list-item>
-            <home-list-item link="/home/gallery/test/1" title="定制案例"></home-list-item>
-            <home-list-item link="home/news/1" title="新闻资讯"></home-list-item>
-            <home-list-item link="home/article/test" title="服务优势" [secondList]="serviceList"></home-list-item>
-            <home-list-item link="/home/gallery/test/1" title="精英团队" [secondList]="eliteList"></home-list-item>
-            <home-list-item link="/home/contact" title="联系我们"></home-list-item>
-            <home-list-item isSearch=true (onClick)="onClick()"></home-list-item>
+          <ul *ngIf="firstMenu">
+            <li class="home-list-item" link="{{firstMenu[0].link}}" title="{{firstMenu[0].title}}"></li>
+            <li class="home-list-item" link="{{firstMenu[1].link}}" title="{{firstMenu[1].title}}" [secondList]="aboutList"></li>
+            <li class="home-list-item" link="{{firstMenu[2].link}}" title="{{firstMenu[2].title}}"></li>
+            <li class="home-list-item" link="{{firstMenu[3].link}}" title="{{firstMenu[3].title}}"></li>
+            <li class="home-list-item" link="{{firstMenu[4].link}}" title="{{firstMenu[4].title}}" [secondList]="serviceList"></li>
+            <li class="home-list-item" link="{{firstMenu[5].link}}" title="{{firstMenu[5].title}}" [secondList]="eliteList"></li>
+            <li class="home-list-item" link="{{firstMenu[6].link}}" title="{{firstMenu[6].title}}"></li>
+            <li class="home-list-item" isSearch=true (onClick)="onClick()"></li>
           </ul>
         </nav>
       </div>

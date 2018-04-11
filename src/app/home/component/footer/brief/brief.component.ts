@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BuildingInfo } from '../../bean/buildingInfo';
 
 @Component({
     selector: 'home-footer-brief',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class BriefComponent implements OnInit {
+
+    @Input() info: BuildingInfo;
 
     constructor() { }
 

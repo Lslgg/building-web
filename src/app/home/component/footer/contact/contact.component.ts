@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'home-fotter-contact',
@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ContactComponent implements OnInit {
+
+    @Input() phone = '';
+    @Input() address = '';
+    @Input() email = '';
+    @Input() code = '';
 
     constructor() { }
 

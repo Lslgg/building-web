@@ -1,4 +1,4 @@
-<home-header></home-header>
-<home-navbar [class.fixed-top]="flag"></home-navbar>
+<home-header [info]="info"></home-header>
+<home-navbar [class.fixed-top]="flag" [firstMenu]="firstMenu" [secondMenu]="secondMenu" [logo]="logo"></home-navbar>
 <router-outlet></router-outlet>
-<home-footer></home-footer>
+<home-footer [info]="info"></home-footer>

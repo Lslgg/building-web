@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'home-footer-copyright',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class CopyrightComponent implements OnInit {
+
+    @Input() copyright = '';
 
     constructor() { }
 
