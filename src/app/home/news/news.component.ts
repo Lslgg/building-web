@@ -43,7 +43,7 @@ export class NewsComponent implements OnInit {
     getData() {
         let sql = gql`query($pageIndex:Int,$pageSize:Int,$type:Json,$search:RegExp) {
                 newsList:getBuildingArticlePage(pageIndex:$pageIndex,pageSize:$pageSize,buildingArticle:{type:$type,title:$search}) {
-                    id,type,title,tag,brief,author,imagesIds:Images{id,path},content,desc,createAt
+                    id,type,title,tag,brief,author,imageIds:Images{id,path},content,desc,createAt
                 }
                 count:getBuildingArticleCount(buildingArticle:{type:$type})
             }`;

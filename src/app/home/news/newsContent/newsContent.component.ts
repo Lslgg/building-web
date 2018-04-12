@@ -29,7 +29,7 @@ export class NewsContentComponent implements OnInit {
         this.apollo.query<{ newsItem: BuildingArticle }>({
             query: gql`query($id:String) {
                 newsItem:getBuildingArticleById(id:$id) {
-                    id,type,title,tag,brief,author,imagesIds:Images{id,path},content,desc,createAt
+                    id,type,title,tag,brief,author,imageIds:Images{id,path},content,desc,createAt
                 }
             }`,
             variables: { id: this.id }

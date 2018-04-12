@@ -1,6 +1,6 @@
-<section class="pic-row">
+<section class="pic-row" *ngIf="colImg && colImg.imageIds && colImg.imageIds[0]">
   <div class="img-box">
-    <img src="assets/building-img/inner-bg.jpg" />
-    <!-- <img *ngIf="img" src="{{img}}" /> -->
+    <!-- <img src="assets/building-img/inner-bg.jpg" /> -->
+    <img src="{{colImg.imageIds[0].path}}" />
   </div>
 </section>

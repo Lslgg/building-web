@@ -35,10 +35,10 @@ export class ArticleComponent implements OnInit {
         this.apollo.query<{ article: BuildingArticle, img: BuildingImages }>({
             query: gql`query($type:Json,$type2:Json) {
                 article: getBuildingArticleWhere(buildingArticle:{type:$type}) {
-                    id,type,title,tag,author,content,desc,imagesIds:Images{id,path},createAt
+                    id,type,title,tag,author,content,desc,imageIds:Images{id,path},createAt
                 }
                 img:getBuildingImagesWhere(buildingImages:{type:$type2}){
-                    id,imagesIds:Images{id,path}
+                    id,imageIds:Images{id,path}
                 }
             }`,
             variables: { type: `{ "$eq": "${this.type}" }`, type2: `{ "$eq": "${this.column}" }` }
@@ -47,7 +47,7 @@ export class ArticleComponent implements OnInit {
                 this.content = data.article[0].content;
             }
             if (data && data.img && data.img[0]) {
-                this.img = data.img[0].imagesIds[0].path;
+                this.img = data.img[0].imageIds[0].path;
             }
             console.log(this.img);
         });

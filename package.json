@@ -32,8 +32,9 @@
     "apollo-angular-link-http": "^1.0.1",
     "apollo-cache-inmemory": "^1.1.5",
     "apollo-client": "^2.2.0",
-    "apollo-link": "^1.0.7",
-    "apollo-upload-client": "^7.0.0-alpha.3",
+    "apollo-link": "^1.2.1",
+    "apollo-link-http-common": "^0.2.3",
+    "apollo-upload-client": "^8.0.0",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.3",
     "graphql": "^0.12.3",
@@ -51,6 +52,7 @@
     "tinymce": "^4.7.5",
     "web-animations-js": "^2.3.1",
     "whatwg-fetch": "^2.0.3",
+    "yarn": "^1.5.1",
     "zone.js": "^0.8.20"
   },
   "devDependencies": {

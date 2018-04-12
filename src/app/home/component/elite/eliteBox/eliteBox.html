@@ -1,9 +1,11 @@
-<a class="elite-box" href="#" (mouseenter)="onEnter()" (mouseleave)="onLeave()">
-  <div class="img-box">
-    <img src="assets/building-img/1-1P224123241W4.jpg">
-  </div>
-  <div class="text-box">
-    <h2>设计部主管</h2>
-    <div class="sf-box" [@state]="state" (@state.done)="animationDone($event)"></div>
-  </div>
-</a>
+<ng-container *ngIf="data">
+  <a class="elite-box" href="/home/galleryShow/elite/5acf25865b300c1778a74453/{{data.id}}" (mouseenter)="onEnter()" (mouseleave)="onLeave()">
+    <div class="img-box">
+      <img *ngIf="data.imageIds && data.imageIds[0]" src="{{data.imageIds[0].path}}">
+    </div>
+    <div class="text-box">
+      <h2>{{data.title}}</h2>
+      <div class="sf-box" [@state]="state" (@state.done)="animationDone($event)"></div>
+    </div>
+  </a>
+</ng-container>

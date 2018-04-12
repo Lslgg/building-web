@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BuildingImages } from '../bean/buildingImages';
 
 @Component({
     selector: 'home-service-section',
@@ -8,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 
 export class ServiceSectionComponent implements OnInit {
 
+    @Input() service1: Array<BuildingImages>;
+
+    @Input() service2: Array<BuildingImages>;
+
+    @Input() service3: Array<BuildingImages>;
+
     constructor() { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        console.log(this.service1);
+    }
 }

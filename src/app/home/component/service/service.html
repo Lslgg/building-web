@@ -1,16 +1,14 @@
 <div class=" row service-box" (mouseenter)="onEnter()" (mouseleave)="onLeave()">
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d-none d-sm-block">
     <div class="img-box">
-      <img src="assets/building-img/s1.jpg" />
+      <img *ngIf="data && data[0] && data[0].imageIds && data[0].imageIds[0]" src="{{data[0].imageIds[0].path}}" />
     </div>
   </div>
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-    <div class="text-box">
-      <h2>服务优势</h2>
-      <p>01、专业的设计团队：我们公司有专业的设计团队，根据业主的需要第一时间为您做好您所需要的装修设计方案。公司专业承接商业家居装修设计施工、商业空间装修设计施工、写字楼装修设计施工、厂房装修设计施工等。</p>
+    <div class="text-box" *ngIf="data && data[0] ">
+      <h2>{{data[0].title}}</h2>
+      <p>{{data[0].brief}}</p>
       <div class="sf-text" [@mouseState]="mouseState" (@mouseState.done)="animationDone($event)"></div>
     </div>
-  </div>  
+  </div>
 </div>
-
-

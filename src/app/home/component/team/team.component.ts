@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BuildingImages } from '../bean/buildingImages';
 
 @Component({
     selector: 'home-team',
@@ -8,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
 
 export class TeamComponent implements OnInit {
 
+    @Input() data: Array<BuildingImages>;
+
     constructor() { }
 
-    ngOnInit() {
-
-    }    
+    ngOnInit() { }
 
 }

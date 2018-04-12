@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
+import { BuildingImages } from '../bean/buildingImages';
 
 @Component({
     selector: 'home-service',
     templateUrl: 'service.html',
-    styleUrls: ['./service.scss','../../media.scss'],
+    styleUrls: ['./service.scss', '../../media.scss'],
     animations: [
         trigger('mouseState', [
             state('enter', style({
@@ -35,12 +36,14 @@ import { trigger, state, style, animate, transition, keyframes } from '@angular/
 
 export class ServiceComponent implements OnInit {
 
+    @Input() data: Array<BuildingImages>;
+
     mouseState: string;
 
     constructor() { }
 
     ngOnInit() {
-
+        console.log(this.data);
     }
 
     onEnter() {

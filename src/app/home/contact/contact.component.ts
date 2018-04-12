@@ -30,7 +30,7 @@ export class ContactComponent implements OnInit {
         this.apollo.query<{ article: Array<BuildingArticle> }>({
             query: gql`query($type:Json) {
                 article: getBuildingArticleWhere(buildingArticle:{type:$type}) {
-                    id,type,title,tag,author,content,desc,imagesIds:Images{id,path},createAt
+                    id,type,title,tag,author,content,desc,imageIds:Images{id,path},createAt
                 }
             }`,
             variables: { type: `{ "$eq": "${this.column}" }` }

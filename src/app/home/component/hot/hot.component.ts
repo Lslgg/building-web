@@ -23,7 +23,7 @@ export class HotComponent implements OnInit {
     getData() {
         let sql = gql`query($pageIndex:Int,$pageSize:Int,$type:Json) {
                 newsList:getBuildingArticlePage(pageIndex:$pageIndex,pageSize:$pageSize,buildingArticle:{type:$type}) {
-                    id,type,title,tag,brief,author,imagesIds:Images{id,path},content,desc,createAt
+                    id,type,title,tag,brief,author,imageIds:Images{id,path},content,desc,createAt
                 }                
             }`;
         let variables = { pageIndex: 1, pageSize: 3, type: "{\"$eq\":\"news\"}" };

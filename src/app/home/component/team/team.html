@@ -1,11 +1,11 @@
 <div class="row team">
   <div class="col">
     <div class="img-box">
-      <img src="assets/building-img/s2.jpg" />
+      <img *ngIf="data && data[0] && data[0].imageIds && data[0].imageIds[0]" src="{{data[0].imageIds[0].path}}" />
     </div>
-    <div class="text-box">
-      <h2>3、专业的施工团队</h2>
-      <p>我们公司有专业的施工团队，帮助您解决工地上各种施工难点。过硬的施工质量，满足不同的层次和不同的业主需求。</p>
+    <div class="text-box" *ngIf="data && data[0]">
+      <h2>{{data[0].title}}</h2>
+      <p>{{data[0].brief}}</p>
     </div>
   </div>
 </div>

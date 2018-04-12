@@ -5,7 +5,7 @@ export class BuildingArticle {
     tag: String;
     brief: String;
     author: String;
-    imagesIds: [String];
+    imageIds: [String];
     content: String;
     desc: String;
     createAt: Date

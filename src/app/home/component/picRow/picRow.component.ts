@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
+import { BuildingImages } from '../bean/buildingImages';
 
 @Component({
     selector: 'home-pic-row',
@@ -24,11 +26,18 @@ export class PicRowComponent implements OnInit {
     }
 
     getData() {
-        this.apollo.query<{ article: Array<BuildingImages> }>({
+        console.log(this.colName);
+        this.apollo.query<{ colImg: Array<BuildingImages> }>({
             query: gql`query($type:Json) {                
+                colImg: getBuildingImagesWhere(buildingImages:{type:$type}) {
+                    id,title,imageIds:Images{ id path },brief,desc     
+                }
             }`,
             variables: { type: `{ "$eq": "${this.colName}" }` }
-        }).subscribe(({ data }) => {            
+        }).subscribe(({ data }) => {
+            if (data && data.colImg && data.colImg[0]) {
+                this.colImg = data.colImg[0];
+            }
         });
     }
 

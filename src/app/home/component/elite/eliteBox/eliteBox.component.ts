@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { BuildingImages } from '../../bean/buildingImages';
 
 @Component({
     selector: 'home-elite-box',
@@ -28,6 +29,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 
 export class EliteBoxComponent implements OnInit {
+
+    @Input() data: BuildingImages;
 
     state: String = 'void';
 

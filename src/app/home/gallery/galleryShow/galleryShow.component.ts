@@ -43,7 +43,7 @@ export class GalleryShowComponent implements OnInit {
     getData() {
         let sql = gql`query($id:String) {
             imgItem:getBuildingImagesById(id:$id) {
-                id,title,brief,type,desc,imagesIds:Images{id,path}
+                id,title,brief,type,desc,imageIds:Images{id,path}
             }            
         }`;
         let variables = { id: `${this.id}` };

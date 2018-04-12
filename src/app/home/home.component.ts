@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
                     id, title, link, isSecond, parentId
                 }
                 logo:getBuildingImagesWhere(buildingImages:{type:"网站图标"}) {
-                  id,title,brief,type,imagesIds:Images{id,path}
+                  id,title,brief,type,imageIds:Images{id,path}
                 }
                 info:getBuildingInfo {
                     id,phone,email,qqLink,tcWeibo,xlWeibo,tbLink,address,brief,code,copyright

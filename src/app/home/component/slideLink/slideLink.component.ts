@@ -31,6 +31,8 @@ export class SlideLinkComponent implements OnInit {
 
     @Input() title: String = '';
 
+    @Input() link: String = '/';
+
     state: String = 'void';
 
     constructor() { }

@@ -3,6 +3,6 @@ export class BuildingImages {
     title: String;
     brief: String;
     type: String;
-    imagesIds: [String];
+    imageIds: [{ id: String, path: String }];
     desc: String;
 }

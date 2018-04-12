@@ -22,9 +22,12 @@ export class GalleryComponent implements OnInit {
 
     count: Number = -1;
 
+    column: String = '';
+
     constructor(private apollo: Apollo, private route: ActivatedRoute) {
         this.index = parseInt(this.route.snapshot.params['index']);
         this.type = 'gallery-' + this.route.snapshot.params['type'];
+        this.column = 'gallery-' + this.route.snapshot.params['column'];
     }
 
     ngOnInit() {
@@ -34,7 +37,7 @@ export class GalleryComponent implements OnInit {
     getData() {
         let sql = gql`query($pageIndex:Int,$pageSize:Int,$type:Json) {
                 galleryList:getBuildingImagesPage(pageIndex:$pageIndex,pageSize:$pageSize,buildingImages:{type:$type}) {
-                    id,title,brief,type,desc,imagesIds:Images{id,path}
+                    id,title,brief,type,desc,imageIds:Images{id,path}
                 }
                 count:getBuildingImagesCount(buildingImages:{type:$type})
             }`;
