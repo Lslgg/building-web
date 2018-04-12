@@ -26,6 +26,6 @@ export class SearchBarComponent implements OnInit {
     }
 
     onEnter(info: String) {
-        console.log(info);
+        location.href = "/home/news/news/1/" + info;
     }
 }

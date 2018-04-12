@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BuildingArticle } from '../../component/bean/buildingArticle';
 
 @Component({
     selector: 'home-news-item',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class NewsItemComponent implements OnInit {
+
+    @Input() newsItem: BuildingArticle;
 
     constructor() { }
 

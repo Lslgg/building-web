@@ -34,7 +34,7 @@ export class PageBoxComponent implements OnInit {
 
     _size: number;
 
-    pageArray: Array<number>;
+    pageArray: Array<number> = [];
 
     index: number = -1;
 

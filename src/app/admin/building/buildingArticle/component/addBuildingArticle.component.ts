@@ -15,6 +15,8 @@ export class AddBuildingArticleComponent implements OnInit {
         id: [''],
         type: ['', Validators.required],
         title: ['', Validators.required],
+        tag: [''],
+        brief: [''],
         author: [''],
         imageIds: [''],
         content: ['', Validators.required],
@@ -26,7 +28,7 @@ export class AddBuildingArticleComponent implements OnInit {
     buildingArticle: FormStr = {
         data: gql`query($id:String){
             info:getBuildingArticleById(id:$id){
-                id,title,author,imageIds:Images{ id name:originalname url:path },content,desc
+                id,type,title,tag,brief,author,imageIds:Images{ id name:originalname url:path },content,desc
             }
         }`,
         save: gql`mutation($info:inputBuildingArticle){

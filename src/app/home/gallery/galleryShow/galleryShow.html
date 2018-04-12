@@ -1,0 +1,22 @@
+<home-pic-row></home-pic-row>
+<section class="home-gallery-show">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <ng-container *ngFor="let item of imgList">
+            <div class="col-sm-4 col-md-4 col-lg-3 col-xl-3">
+              <div class="img-box" (click)="show(item)">
+                <img src="{{item}}" />
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="big-img" [class.big-img-active]="flag" (click)="show('')">
+  <img src="{{imgPath}}" />
+</div>

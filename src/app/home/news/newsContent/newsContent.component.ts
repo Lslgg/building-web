@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
+import { BuildingArticle } from '../../component/bean/buildingArticle';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'home-news-content',
@@ -10,18 +12,31 @@ import gql from 'graphql-tag';
 
 export class NewsContentComponent implements OnInit {
 
-    constructor(private apollo: Apollo) { }
+    id: String = '';
 
-    ngOnInit() { }
+    newsItem: BuildingArticle;
+
+    constructor(private apollo: Apollo, private route: ActivatedRoute) {
+        this.id = this.route.snapshot.params['id'];
+    }
+
+    ngOnInit() {
+        this.getData();
+    }
 
     // 查询 新闻内容
     getData() {
-        this.apollo.query<{ list: any }>({
-            query: gql`query {
-                
-            }`
+        this.apollo.query<{ newsItem: BuildingArticle }>({
+            query: gql`query($id:String) {
+                newsItem:getBuildingArticleById(id:$id) {
+                    id,type,title,tag,brief,author,imagesIds:Images{id,path},content,desc,createAt
+                }
+            }`,
+            variables: { id: this.id }
         }).subscribe(({ data }) => {
-            console.log(data);
+            if (data && data.newsItem) {
+                this.newsItem = data.newsItem;
+            }
         });
     }
 }

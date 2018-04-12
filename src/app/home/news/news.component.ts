@@ -24,9 +24,15 @@ export class NewsComponent implements OnInit {
 
     newsList: Array<BuildingArticle> = [];
 
+    search: String;
+
     constructor(private apollo: Apollo, private route: ActivatedRoute) {
         this.url = '/home/news/' + this.route.snapshot.params['column'];
         this.index = parseInt(this.route.snapshot.params['index']);
+        this.search = this.route.snapshot.params['search'];
+        if (!this.search) {
+            this.search = '';
+        }
     }
 
     ngOnInit() {
@@ -35,14 +41,17 @@ export class NewsComponent implements OnInit {
 
     // 查询 新闻分页
     getData() {
-        this.apollo.query<{ newsList: Array<BuildingArticle>, count: Number }>({
-            query: gql`query($pageIndex:Int,$pageSize:Int,$type:Json) {
-                newsList:getBuildingArticlePage(pageIndex:$pageIndex,pageSize:$pageSize,buildingArticle:{type:$type}) {
-                    id
+        let sql = gql`query($pageIndex:Int,$pageSize:Int,$type:Json,$search:RegExp) {
+                newsList:getBuildingArticlePage(pageIndex:$pageIndex,pageSize:$pageSize,buildingArticle:{type:$type,title:$search}) {
+                    id,type,title,tag,brief,author,imagesIds:Images{id,path},content,desc,createAt
                 }
                 count:getBuildingArticleCount(buildingArticle:{type:$type})
-            }`,
-            variables: { $pageIndex: this.index, $pageSize: this.pageSize, type: "{\"$eq\":\"news\"}" }
+            }`;
+        let variables = { pageIndex: this.index, pageSize: this.pageSize, type: "{\"$eq\":\"news\"}", search: this.search };
+
+        this.apollo.query<{ newsList: Array<BuildingArticle>, count: Number }>({
+            query: sql,
+            variables: variables
         }).subscribe(({ data }) => {
             if (data && data.newsList) {
                 this.newsList = data.newsList;

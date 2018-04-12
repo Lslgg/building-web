@@ -1,14 +1,14 @@
 <div class="row news-item">
   <div class="col-sm-4 col-md-4 col-lg-4 col-xl-3" [style.padding.px]=0>
-    <a href="#" class="img-box">
+    <a href="/home/newsContent/news/{{newsItem.id}}" class="img-box">
       <img src="assets/building-img/1-1P224130532246.jpg" />
     </a>
   </div>
-  <div class="col-sm-8 col-md-8 col-lg-8 col-xl-9" [style.paddingLeft.px]=25>
+  <div class="col-sm-8 col-md-8 col-lg-8 col-xl-9" [style.paddingLeft.px]=25 *ngIf="newsItem">
     <div class="row text-box">
       <div class="col-12">
         <h2>
-          <a href="#">办公室装修设计中您是否忽略了“光健康”</a>
+          <a href="/home/newsContent/news/{{newsItem.id}}">{{newsItem.title}}</a>
         </h2>
       </div>
       <div class="col-sm-3 col-md-3 col-lg-4 col-xl-3">
@@ -16,17 +16,17 @@
           <ul>
             <li>
               <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-              <span>2018-2-8</span>
+              <span>{{newsItem.createAt}}</span>
             </li>
             <li>
               <i class="fa fa-tags"></i>&nbsp;&nbsp;
               <span>
-                <a href="/home/news/1">新闻资讯</a>
+                <a href="/home/news/1">{{newsItem.tag}}</a>
               </span>
             </li>
             <li>
               <i class="fa fa-user"></i>&nbsp;&nbsp;
-              <span>ADMIN</span>
+              <span>{{newsItem.author}}</span>
             </li>
           </ul>
         </div>
@@ -34,9 +34,9 @@
       <div class="col-sm-9 col-md-9 col-lg-8 col-xl-9">
         <div class="content-box">
           <p>
-            现代办公室装修中很多的业主往往会看重办公室的装修风格和实用性，很少会有业主去关注办公室环境问题，这环境问题不是我们常说的绿色植物的摆放，或是装修材料的选择是否环保...
+            {{newsItem.brief}}
           </p>
-          <a href="#">查看详细&nbsp;
+          <a href="/home/newsContent/news/{{newsItem.id}}">查看详细&nbsp;
             <i class="fa fa-angle-double-right"></i>
           </a>
         </div>

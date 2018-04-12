@@ -1,13 +1,13 @@
-<template-panel-form Title="修改菜单">
+<template-panel-form Title="修改图片">
   <data-form [formInfo]="buildingImagesForm" [dataStr]="buildingImages">
     <form-item name="type" title="类型" type="select" [dataList]="typeList">
       <form-validator type="required" title="请选择类型"></form-validator>
     </form-item>
     <form-item name="title" title="标题">
-      <form-validator type="required" title="请输入描述"></form-validator>
+      <form-validator type="required" title="请输入标题"></form-validator>
     </form-item>
     <form-item name="brief" title="简介">
-      <form-validator type="required" title="请输入描述"></form-validator>
+      <form-validator type="required" title="请输入简介"></form-validator>
     </form-item>
     <form-item name="imageIds" title="图片" type="file">
       <form-validator type="required" title="请选择上传图片"></form-validator>

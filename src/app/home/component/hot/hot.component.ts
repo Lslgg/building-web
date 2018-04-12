@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
+import { BuildingArticle } from '../bean/buildingArticle';
 
 @Component({
     selector: 'home-hot',
@@ -12,16 +13,28 @@ export class HotComponent implements OnInit {
 
     constructor(private apollo: Apollo) { }
 
-    ngOnInit() { }
+    newsList: Array<BuildingArticle> = [];
 
-    // 查询 热门新闻X3
+    ngOnInit() {
+        this.getData();
+    }
+
+    // 查询 热门新闻X3    
     getData() {
-        this.apollo.query<{ list: any }>({
-            query: gql`query {
-                    
-                }`
+        let sql = gql`query($pageIndex:Int,$pageSize:Int,$type:Json) {
+                newsList:getBuildingArticlePage(pageIndex:$pageIndex,pageSize:$pageSize,buildingArticle:{type:$type}) {
+                    id,type,title,tag,brief,author,imagesIds:Images{id,path},content,desc,createAt
+                }                
+            }`;
+        let variables = { pageIndex: 1, pageSize: 3, type: "{\"$eq\":\"news\"}" };
+
+        this.apollo.query<{ newsList: Array<BuildingArticle> }>({
+            query: sql,
+            variables: variables
         }).subscribe(({ data }) => {
-            console.log(data);
+            if (data && data.newsList) {
+                this.newsList = data.newsList;
+            }
         });
     }
 }

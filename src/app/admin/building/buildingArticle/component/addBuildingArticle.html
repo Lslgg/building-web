@@ -1,13 +1,19 @@
-<template-panel-form Title="修改菜单">
+<template-panel-form Title="修改新闻/文章">
   <data-form [formInfo]="buildingArticleForm" [dataStr]="buildingArticle">
     <form-item name="type" title="类型" type="select" [dataList]="typeList">
       <form-validator type="required" title="请选择类型"></form-validator>
     </form-item>
     <form-item name="title" title="标题">
-      <form-validator type="required" title="请输入描述"></form-validator>
+      <form-validator type="required" title="请输入标题"></form-validator>
+    </form-item>
+    <form-item name="tag" title="标签">
+      <form-validator type="required" title="请输入标签"></form-validator>
+    </form-item>
+    <form-item name="brief" title="新闻简介">
+      <form-validator type="required" title="请输入简介"></form-validator>
     </form-item>
     <form-item name="author" title="作者">
-      <form-validator type="required" title="请输入描述"></form-validator>
+      <form-validator type="required" title="请输入作者"></form-validator>
     </form-item>
     <form-item name="imageIds" title="图片" type="file">
       <form-validator type="required" title="请选择上传图片"></form-validator>

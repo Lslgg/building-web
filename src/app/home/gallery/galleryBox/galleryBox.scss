@@ -1,9 +1,12 @@
 .gallery-box {
   .img-box {
+    display: block;
     width: 100%;
     cursor: pointer;
+    border-radius: 5px;
     img {
       width: 100%;
+      border-radius: 5px;
     }
   }
   h5 {
@@ -20,4 +23,23 @@
       color: inherit;
     }
   }
+  &:hover {
+    .img-box {
+      transform: scale(1.03);
+    }
+  }
+}
+
+.gallery-slide {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20% 15% 0;
+  margin: auto;
+  z-index: 6000;
+  background-color: rgba(0, 0, 0, .5);
 }

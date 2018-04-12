@@ -3,8 +3,6 @@
     热点新闻
   </h3>
   <div class="hot-list">
-    <home-hot-item></home-hot-item>
-    <home-hot-item></home-hot-item>
-    <home-hot-item></home-hot-item>
+    <home-hot-item *ngFor="let newsItem of newsList" [newsItem]="newsItem"></home-hot-item>
   </div>
 </aside>
