@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-12 brand-col" id="brand-col" [style.marginLeft.px]="marginLeft" [class.col-ani]="flag">
         <div class="img-box" *ngFor="let item of list" id="brand-box">
-          <img src="{{item}}">
+          <img src="{{dataServer}}{{item}}">
         </div>
       </div>
     </div>

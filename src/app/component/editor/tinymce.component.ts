@@ -51,7 +51,7 @@ export class TinyMceComponent {
             skin_url: '/assets/skins/lightgray',
             images_upload_url: `${environment.dataServer}/upload`,
             images_upload_credentials: true,
-            width:1100,
+            width:1020,
             setup: editor => {
                 this.editor = editor;
                 editor.on('keyup change', (e: any) => {

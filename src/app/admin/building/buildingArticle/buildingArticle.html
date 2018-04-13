@@ -6,6 +6,6 @@
       <th class="data-th" name="type" title="类型" type="select"></th>
       <th class="data-th" name="#" type="operation" title="操作"></th>
     </thead>
-    <tbody class="data-tbody" operation="删除"></tbody>
+    <tbody class="data-tbody" operation="删除" #tbody (onData)="onData($event,tbody.dataList)"></tbody>
   </data-table>
 </template-panel-table>

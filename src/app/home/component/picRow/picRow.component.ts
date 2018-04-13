@@ -14,15 +14,15 @@ export class PicRowComponent implements OnInit {
 
     @Input() img: String;
 
-    @Input() colName: String;
+    colName: String;
 
     colImg: BuildingImages;
 
     dataServer: String = '';
 
-    constructor(private apollo: Apollo, @Inject("commonData") private cdata: CommonData) {
+    constructor(private apollo: Apollo, @Inject("commonData") private cdata: CommonData, private route: ActivatedRoute) {
         this.dataServer = this.cdata.dataServer + '/';
-        
+        this.colName = this.route.snapshot.params['column'];
     }
 
     ngOnInit() {

@@ -26,7 +26,7 @@ export class AddBuildingImagesComponent implements OnInit {
     buildingImages: FormStr = {
         data: gql`query($id:String){
             info:getBuildingImagesById(id:$id){
-                id,title,imageIds:Images{ id name:originalname url:path },brief,desc     
+                id,title,imageIds:Images{ id name:originalname url:path },brief,desc,type   
             }
         }`,
         save: gql`mutation($info:inputBuildingImages){

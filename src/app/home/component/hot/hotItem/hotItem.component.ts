@@ -14,7 +14,7 @@ export class HotItemComponent implements OnInit {
     dataServer: String = '';
 
     constructor(@Inject("commonData") private cdata: CommonData) {
-        this.dataServer = this.cdata.dataServer;
+        this.dataServer = this.cdata.dataServer + '/';
     }
 
     ngOnInit() { }

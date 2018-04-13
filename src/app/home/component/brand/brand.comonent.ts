@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { BuildingImages } from '../bean/buildingImages';
 
 
@@ -26,15 +26,20 @@ export class BrandComponent implements OnInit {
             for (let i = 0; i < data[0].imageIds.length; i++) {
                 this.dataList.push(data[0].imageIds[i].path);
             }
+            console.log(this.dataList);
             this.getInit();
         }
     }
 
-    dataList: Array<String>;
+    dataList: Array<String> = [];
 
     list: Array<String> = [];
 
-    constructor() { }
+    dataServer: String = '';
+
+    constructor(@Inject("commonData") private cdata: CommonData) {
+        this.dataServer = this.cdata.dataServer + '/';
+    }
 
     ngAfterViewInit() {
         let colWidth = document.getElementById('brand-col')['offsetWidth'];
@@ -46,8 +51,7 @@ export class BrandComponent implements OnInit {
         }
     }
 
-    ngOnInit() {
-    }
+    ngOnInit() { }
 
     getInit() {
         let width = window.innerWidth;

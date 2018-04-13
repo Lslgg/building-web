@@ -33,4 +33,16 @@ export class BuildingImagesComponent implements OnInit {
 
     ngOnInit() { }
 
+    onData(event: any, dataList: any) {
+        if (dataList) {
+            for (let i = 0; i < dataList.length; i++) {
+                for (let j = 0; j < this.typeList.length; j++) {
+                    if (dataList[i].type == this.typeList[j].key) {
+                        dataList[i].type = this.typeList[j].value;
+                    }
+                }
+            }
+        }
+    }
+
 }
