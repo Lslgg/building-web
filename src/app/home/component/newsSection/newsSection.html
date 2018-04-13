@@ -18,7 +18,7 @@
                   <img *ngIf="item.imageIds && item.imageIds[0]" src="{{dataServer}}{{item.imageIds[0].path}}">
                 </a>
                 <h2>
-                  <i class="fa fa-calendar"></i>&nbsp;&nbsp;{{item.createAt}}</h2>
+                  <i class="fa fa-calendar"></i>&nbsp;&nbsp;{{item.createAt | date:"yyyy-MM-dd"}}</h2>
               </div>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-6 col-lg-6 no-padding">

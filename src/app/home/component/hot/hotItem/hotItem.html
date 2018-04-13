@@ -5,7 +5,7 @@
   <div class="text-box">
     <a href="/home/newsContent/news/{{newsItem.id}}">{{newsItem.title}}</a>
     <span>
-      <i class="fa fa-calendar"></i>&nbsp;&nbsp;{{newsItem.createAt}}
+      <i class="fa fa-calendar"></i>&nbsp;&nbsp;{{newsItem.createAt | date:"yyyy-MM-dd"}}
     </span>
   </div>
 </div>

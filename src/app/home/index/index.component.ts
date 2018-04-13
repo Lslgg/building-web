@@ -13,8 +13,6 @@ import { BuildingArticle } from '../component/bean/buildingArticle';
 
 export class IndexComponent implements OnInit {
 
-    imgList: Array<String> = ['assets/building-img/1-1P2241022380-L.jpg', 'assets/building-img/1-1P2241023190-L.jpg'];
-
     slideList: Array<BuildingImages>;
 
     service1: Array<BuildingImages>;
@@ -46,7 +44,7 @@ export class IndexComponent implements OnInit {
     // 查询 轮播图 服务图X3 案例图X6 团队图X4 联系图1 联系图2 新闻资讯X2 商标图片
     getData() {
         type data = {
-            imgList: Array<String>, slideList: Array<BuildingImages>, exampleList: Array<BuildingImages>
+            slideList: Array<BuildingImages>, exampleList: Array<BuildingImages>
             , teamList: Array<BuildingImages>, contact1: Array<BuildingImages>, contact2: Array<BuildingImages>
             , brandList: Array<BuildingImages>, service1: Array<BuildingImages>, service2: Array<BuildingImages>
             , service3: Array<BuildingImages>, info: Array<BuildingInfo>, newsList: Array<BuildingArticle>
@@ -90,7 +88,6 @@ export class IndexComponent implements OnInit {
             query: sql
         }).subscribe(({ data }) => {
             if (data) {
-                this.imgList = data.imgList;
                 this.slideList = data.slideList;
                 this.exampleList = data.exampleList;
                 this.teamList = data.teamList;

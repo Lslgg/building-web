@@ -3,6 +3,7 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { setInterval } from 'timers';
+import { BuildingImages } from '../bean/buildingImages';
 
 @Component({
     selector: 'home-slide',
@@ -22,20 +23,33 @@ import { setInterval } from 'timers';
 
 export class SlideComponent implements OnInit {
 
-    @Input() list: Array<String> = [];
     @Input() toNextImg: Boolean = true;
     @Input() startIndex: Number = 0;
+    @Input()
+    set data(data: Array<BuildingImages>) {
+        if (data && data[0] && data[0].imageIds) {
+            this.list = [];
+            for (let i = 0; i < data[0].imageIds.length; i++) {
+                this.list.push(data[0].imageIds[0].path);
+            }
+            this.getList();
+        }
+    }
+    @Output() clickImg = new EventEmitter<any>();
+    list: Array<String> = [];
     strArr: Array<String> = [];
     ponintArray: Array<boolean> = [];
     state: string = "init";
     marginLeft: string = "-100%";
-    @Output() clickImg = new EventEmitter<any>();
+    dataServer: String = '';
 
     constructor(@Inject("commonData") private cdata: CommonData,
-        private apollo: Apollo) { }
+        private apollo: Apollo) {
+        console.log(cdata.dataServer);
+        this.dataServer = cdata.dataServer + '/';
+    }
 
     ngOnInit() {
-        this.getList();
     }
 
     toggleState(flag: number) {
@@ -93,32 +107,7 @@ export class SlideComponent implements OnInit {
     }
 
     getList() {
-        if (this.list.length > 0) {
-            this.initList();
-        } else {
-            type Image = { id: String, imageIds: any, type: String };
-            this.apollo.query<{ imglist: Array<Image> }>({
-                query: gql`query($info:searchImages){
-                    imglist:getImagesWhere(images:$info){
-                        id,imageIds:Images{id name:originalname url:path},type
-                    }
-                }`,
-                variables: { info: { "type": `{"$eq":"首页-幻灯片"}` } }
-            }).subscribe(({ data }) => {
-                if (data.imglist) {
-                    for (var i = 0; i < data.imglist.length; i++) {
-                        if (data.imglist[i].imageIds) {
-                            for (var j = 0; j < data.imglist[i].imageIds.length; j++) {
-                                if (data.imglist[i].imageIds[j]) {
-                                    this.list.push(this.cdata.dataServer + '/' + data.imglist[i].imageIds[j].url);
-                                }
-                            }
-                        }
-                    }
-                    this.initList();
-                }
-            });
-        }
+        this.initList();
     }
 
     initList() {
@@ -136,7 +125,7 @@ export class SlideComponent implements OnInit {
             this.strArr.push(this.list[0]);
         }
         var l = 1;
-        while (l < this.startIndex) {            
+        while (l < this.startIndex) {
             var t = this.strArr[1];
             for (var i = 1; i < this.strArr.length - 1; i++) {
                 this.strArr[i] = this.strArr[i + 1];

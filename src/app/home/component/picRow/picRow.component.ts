@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Inject } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { BuildingImages } from '../bean/buildingImages';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'home-pic-row',
@@ -17,7 +18,12 @@ export class PicRowComponent implements OnInit {
 
     colImg: BuildingImages;
 
-    constructor(private apollo: Apollo) { }
+    dataServer: String = '';
+
+    constructor(private apollo: Apollo, @Inject("commonData") private cdata: CommonData) {
+        this.dataServer = this.cdata.dataServer + '/';
+        
+    }
 
     ngOnInit() {
         if (this.colName) {
