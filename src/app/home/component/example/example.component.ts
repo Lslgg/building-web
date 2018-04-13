@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { BuildingImages } from '../bean/buildingImages';
 
 @Component({
@@ -13,7 +13,11 @@ export class ExampleComponent implements OnInit {
 
     flag: Boolean = true;
 
-    constructor() { }
+    dataServer: String = '';
+
+    constructor(@Inject("commonData") private cdata: CommonData) {
+        this.dataServer = this.cdata.dataServer + '/';
+    }
 
     ngOnInit() {
 

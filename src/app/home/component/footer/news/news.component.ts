@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BuildingArticle } from '../../bean/buildingArticle';
 
 @Component({
     selector: 'home-footer-news',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class NewsComponent implements OnInit {
+
+    @Input() newsList: Array<BuildingArticle> = [];
 
     constructor() { }
 

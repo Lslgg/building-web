@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { BuildingImages } from '../bean/buildingImages';
 import { BuildingInfo } from '../bean/buildingInfo';
 
@@ -16,8 +16,11 @@ export class ContactSectionComponent implements OnInit {
 
     @Input() info: Array<BuildingInfo>;
 
+    dataServer: String = '';
 
-    constructor() { }
+    constructor(@Inject("commonData") private cdata: CommonData) {
+        this.dataServer = this.cdata.dataServer + '/';
+    }
 
     ngOnInit() { }
 }

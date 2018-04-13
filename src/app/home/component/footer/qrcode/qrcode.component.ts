@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
+import { BuildingImages } from '../../bean/buildingImages';
 
 @Component({
     selector: 'home-footer-qrcode',
@@ -8,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 
 export class QrcodeComponent implements OnInit {
 
-    constructor() { }
+    @Input() data: BuildingImages;
+
+    dataServer: String = '';
+
+    constructor(@Inject("commonData") private cdata: CommonData) {
+        this.dataServer = this.cdata.dataServer;
+    }
 
     ngOnInit() { }
 }

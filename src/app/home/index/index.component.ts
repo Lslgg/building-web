@@ -3,6 +3,7 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { BuildingImages } from '../component/bean/buildingImages';
 import { BuildingInfo } from '../component/bean/buildingInfo';
+import { BuildingArticle } from '../component/bean/buildingArticle';
 
 @Component({
     selector: 'home-index',
@@ -32,6 +33,8 @@ export class IndexComponent implements OnInit {
 
     brandList: Array<BuildingImages>;
 
+    newsList: Array<BuildingArticle>;
+
     info: Array<BuildingInfo>;
 
     constructor(private apollo: Apollo) { }
@@ -46,7 +49,7 @@ export class IndexComponent implements OnInit {
             imgList: Array<String>, slideList: Array<BuildingImages>, exampleList: Array<BuildingImages>
             , teamList: Array<BuildingImages>, contact1: Array<BuildingImages>, contact2: Array<BuildingImages>
             , brandList: Array<BuildingImages>, service1: Array<BuildingImages>, service2: Array<BuildingImages>
-            , service3: Array<BuildingImages>, info: Array<BuildingInfo>
+            , service3: Array<BuildingImages>, info: Array<BuildingInfo>, newsList: Array<BuildingArticle>
         };
         var sql = gql`query {            
             slideList:getBuildingImagesWhere(buildingImages:{type:"slide"}) {
@@ -77,8 +80,11 @@ export class IndexComponent implements OnInit {
                 id,title,imageIds:Images{ id path },brief,desc     
             }         
             info:getBuildingInfo {
-                    id,phone,email,qqLink,tcWeibo,xlWeibo,tbLink,address,brief,code,copyright
-            }   
+                    id,phone,contact1,contact2
+            }       
+            newsList:getBuildingArticlePage(pageIndex:1,pageSize:2,buildingArticle:{type:"news"}) {
+                id,type,title,tag,author,content,desc,imageIds:Images{id,path},createAt,brief
+            }
         }`;
         this.apollo.query<data>({
             query: sql
@@ -95,6 +101,7 @@ export class IndexComponent implements OnInit {
                 this.service2 = data.service2;
                 this.service3 = data.service3;
                 this.teamList = data.teamList;
+                this.newsList = data.newsList;
                 this.info = data.info;
             }
         });

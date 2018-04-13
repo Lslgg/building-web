@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { Router, ActivatedRoute } from '@angular/router';
 import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
+import { ArticleTypeList } from '../../../../home/component/bean/buildingArticleType';
 
 @Component({
     selector: 'building-add-building-menu',
@@ -39,18 +40,13 @@ export class AddBuildingArticleComponent implements OnInit {
 
     files: Array<any> = new Array<any>();
 
-    typeList: Array<{ key: string, value: string }> = [
-        { key: "companyBrief", value: "关于我们-公司简介" },
-        { key: "brandBrief", value: "关于我们-品牌简介" },
-        { key: "service", value: "服务优势-专业的服务团队" },
-        { key: "serviceWork", value: "服务优势-专业的施工团队" },
-        { key: "contact", value: "联系我们" },
-        { key: "news", value: "新闻" },
-    ];
+
+    typeList: Array<{ key: string, value: string }>;
 
     constructor(@Inject("commonData") private cdate: CommonData,
         private fb: FormBuilder, private route: ActivatedRoute,
         private router: Router, private apollo: Apollo) {
+        this.typeList = ArticleTypeList.typeList;
     }
 
     ngOnInit() { }

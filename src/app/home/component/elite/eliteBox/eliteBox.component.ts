@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { BuildingImages } from '../../bean/buildingImages';
 
@@ -34,7 +34,11 @@ export class EliteBoxComponent implements OnInit {
 
     state: String = 'void';
 
-    constructor() { }
+    dataServer: String = '';
+
+    constructor(@Inject("commonData") private cdata: CommonData) {
+        this.dataServer = this.cdata.dataServer + '/';
+    }
 
     ngOnInit() { }
 

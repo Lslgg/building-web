@@ -1,6 +1,6 @@
 <div class="hot-item">
   <a href="/home/newsContent/news/{{newsItem.id}}" class="img-box">
-    <img src="assets/building-img/1-1P224123241W4.jpg" />
+    <img *ngIf="newsItem && newsItem.imageIds && newsItem.imageIds[0]" src="{{dataServer}}{{newsItem.imageIds[0].path}}" />
   </a>
   <div class="text-box">
     <a href="/home/newsContent/news/{{newsItem.id}}">{{newsItem.title}}</a>

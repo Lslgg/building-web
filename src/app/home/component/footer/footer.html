@@ -7,13 +7,13 @@
         <home-footer-brief [info]="_info"></home-footer-brief>
       </div>
       <div class="col-3">
-        <home-footer-news></home-footer-news>
+        <home-footer-news [newsList]="newsList"></home-footer-news>
       </div>
       <div class="col-3">
         <home-fotter-contact [phone]="_info.phone" [address]="_info.address" [email]="_info.email" [code]="_info.code"></home-fotter-contact>
       </div>
       <div class="col-3">
-        <home-footer-qrcode></home-footer-qrcode>
+        <home-footer-qrcode [data]="qrcode"></home-footer-qrcode>
       </div>
     </div>
   </div>

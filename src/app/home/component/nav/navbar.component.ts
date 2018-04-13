@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, Inject } from '@angular/core';
 import { BuildingMenu } from '../bean/buildingMenu';
 import { BuildingImages } from '../bean/buildingImages';
 
@@ -25,7 +25,11 @@ export class NavBarComponent implements OnInit {
     nullList: Array<{ link: String, title: String }> = [];
     flag: Number = 0;
 
-    constructor() { }
+    dataServer: String = '';
+
+    constructor(@Inject("commonData") private cdata: CommonData) {
+        this.dataServer = this.cdata.dataServer + '/';
+    }
 
     ngOnInit() { }
 

@@ -35,7 +35,7 @@ export class ArticleComponent implements OnInit {
         this.apollo.query<{ article: BuildingArticle, img: BuildingImages }>({
             query: gql`query($type:Json,$type2:Json) {
                 article: getBuildingArticleWhere(buildingArticle:{type:$type}) {
-                    id,type,title,tag,author,content,desc,imageIds:Images{id,path},createAt
+                    id,type,title,tag,author,content,desc,imageIds:Images{id,path},createAt,brief
                 }
                 img:getBuildingImagesWhere(buildingImages:{type:$type2}){
                     id,imageIds:Images{id,path}

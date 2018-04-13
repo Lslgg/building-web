@@ -1,7 +1,7 @@
 <div class="row team">
   <div class="col">
     <div class="img-box">
-      <img *ngIf="data && data[0] && data[0].imageIds && data[0].imageIds[0]" src="{{data[0].imageIds[0].path}}" />
+      <img *ngIf="data && data[0] && data[0].imageIds && data[0].imageIds[0]" src="{{dataServer}}{{data[0].imageIds[0].path}}" />
     </div>
     <div class="text-box" *ngIf="data && data[0]">
       <h2>{{data[0].title}}</h2>

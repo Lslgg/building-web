@@ -3,17 +3,18 @@
     <div class="row">
       <div class="col-3">
         <div class="img-box">
-          <img src="assets/building-img/man.png">
+          <img *ngIf="contact1 && contact1[0] && contact1[0].imageIds[0]" src="{{dataServer}}{{contact1[0].imageIds[0].path}}">
         </div>
-      </div>
+      </div>s
       <div class="col">
         <div class="text-box">
           <h2>
-            <span>精益求精，创造您空间的</span> 核心价值</h2>
-          <p>集室内设计、工程施工、材料装饰为一体的专业化中型装饰企业</p>
+            <span *ngIf="info && info[0]">{{info[0].contact1}}</span>
+          </h2>
+          <p *ngIf="info && info[0]">{{info[0].contact2}}</p>
           <p class="phone-contact">
             <b *ngIf="info && info[0]">{{info[0].phone}}</b> 或
-            <home-slide-link link="/" title="查看更多"></home-slide-link>
+            <home-slide-link link="/home/contact/contact" title="查看更多"></home-slide-link>
           </p>
         </div>
       </div>

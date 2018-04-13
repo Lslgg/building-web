@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 import { BuildingImages } from '../bean/buildingImages';
 
@@ -40,7 +40,11 @@ export class ServiceComponent implements OnInit {
 
     mouseState: string;
 
-    constructor() { }
+    dataServer: String = '';
+
+    constructor(@Inject("commonData") private cdata: CommonData) {
+        this.dataServer = this.cdata.dataServer + '/';
+    }
 
     ngOnInit() {
         console.log(this.data);

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { BuildingArticle } from '../../bean/buildingArticle';
 
 @Component({
@@ -11,7 +11,11 @@ export class HotItemComponent implements OnInit {
 
     @Input() newsItem: BuildingArticle;
 
-    constructor() { }
+    dataServer: String = '';
+
+    constructor(@Inject("commonData") private cdata: CommonData) {
+        this.dataServer = this.cdata.dataServer;
+    }
 
     ngOnInit() { }
 }

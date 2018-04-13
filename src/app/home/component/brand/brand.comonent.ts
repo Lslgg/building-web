@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BuildingImages } from '../bean/buildingImages';
 
 
 @Component({
@@ -19,9 +20,18 @@ export class BrandComponent implements OnInit {
 
     isSlide: boolean = false;
 
-    dataList: Array<String> = ['assets/building-img/brand-2.png', 'assets/building-img/brand-3.png'
-        , 'assets/building-img/brand-4.png', 'assets/building-img/brand-5.png', 'assets/building-img/brand-6.png'
-        , 'assets/building-img/brand-7.png', 'assets/building-img/brand-8.png', 'assets/building-img/brand-9.png'];
+    @Input()
+    set data(data: Array<BuildingImages>) {
+        if (data && data[0] && data[0].imageIds) {
+            for (let i = 0; i < data[0].imageIds.length; i++) {
+                this.dataList.push(data[0].imageIds[i].path);
+            }
+            this.getInit();
+        }
+    }
+
+    dataList: Array<String>;
+
     list: Array<String> = [];
 
     constructor() { }
@@ -37,6 +47,9 @@ export class BrandComponent implements OnInit {
     }
 
     ngOnInit() {
+    }
+
+    getInit() {
         let width = window.innerWidth;
         if (width >= 1200 && this.dataList.length >= 5) {
             this.isSlide = true;
@@ -56,7 +69,6 @@ export class BrandComponent implements OnInit {
             return;
         }
         this.getList(false);
-
     }
 
     getList(isSlide: Boolean) {
