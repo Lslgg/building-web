@@ -48,8 +48,7 @@ export class ArticleComponent implements OnInit {
             }
             if (data && data.img && data.img[0]) {
                 this.img = data.img[0].imageIds[0].path;
-            }
-            console.log(this.img);
+            }            
         });
     }
 }

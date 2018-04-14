@@ -60,8 +60,6 @@ export class NavBarComponent implements OnInit {
         this.flag = this.flag.valueOf() + 1;
     }
 
-    onEnter(info: String) {
-        console.log(info);
-    }
+    onEnter(info: String) { }
 
 }

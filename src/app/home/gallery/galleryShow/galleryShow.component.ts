@@ -36,7 +36,6 @@ export class GalleryShowComponent implements OnInit {
 
     show(info: String) {
         this.imgPath = info;
-        console.log(info);
         this.flag = !this.flag;
     }
 

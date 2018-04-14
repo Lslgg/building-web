@@ -17,7 +17,5 @@ export class ServiceSectionComponent implements OnInit {
 
     constructor() { }
 
-    ngOnInit() {
-        console.log(this.service1);
-    }
+    ngOnInit() { }
 }

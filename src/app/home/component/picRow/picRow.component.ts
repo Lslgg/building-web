@@ -32,7 +32,6 @@ export class PicRowComponent implements OnInit {
     }
 
     getData() {
-        console.log(this.colName);
         this.apollo.query<{ colImg: Array<BuildingImages> }>({
             query: gql`query($type:Json) {                
                 colImg: getBuildingImagesWhere(buildingImages:{type:$type}) {

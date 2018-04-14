@@ -40,16 +40,7 @@ export class BrandComponent implements OnInit {
         this.dataServer = this.cdata.dataServer + '/';
     }
 
-    ngAfterViewInit() {
-        //     let colWidth = document.getElementById('brand-col')['offsetWidth'];
-        //     let itemWidth = document.getElementById('brand-box')['offsetWidth'];
-        //     this.colWidth = colWidth;
-        //     this.itemWidth = (colWidth / 100) * 2 + itemWidth;
-        //     if (this.isSlide) {
-        //         this.marginLeft = -this.itemWidth;
-        //     }
-        console.log('after');
-    }
+    ngAfterViewInit() { }
 
     ngOnInit() { }
 

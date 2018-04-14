@@ -17,7 +17,5 @@ export class NewsSectionComponent implements OnInit {
         this.dataServer = this.cdata.dataServer + '/';
     }
 
-    ngOnInit() {
-        console.log(this.data);
-    }
+    ngOnInit() { }
 }

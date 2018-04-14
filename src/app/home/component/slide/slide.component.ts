@@ -45,7 +45,6 @@ export class SlideComponent implements OnInit {
 
     constructor(@Inject("commonData") private cdata: CommonData,
         private apollo: Apollo) {
-        console.log(cdata.dataServer);
         this.dataServer = cdata.dataServer + '/';
     }
 
