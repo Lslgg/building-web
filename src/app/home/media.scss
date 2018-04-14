@@ -1,3 +1,72 @@
+@media screen and (min-width: 1800px) {
+  .footer>.container {
+    max-width: 1370px;
+    width: 1370px;
+  }
+  .carousel>div {
+    height: 680px;
+  } //~~
+  .navbox>.container {
+    max-width: 1370px;
+    width: 1370px;
+  }
+  .header>.container {
+    max-width: 1400px;
+    width: 1400px;
+  }
+  .search-bar>.container {
+    max-width: 1300px;
+    width: 1300px;
+  }
+  .about-brief>.container {
+    max-width: 1370px;
+    width: 1370px;
+  }
+  .home-gallery>.container {
+    max-width: 1370px;
+    width: 1370px;
+  }
+  .home-news>.container {
+    max-width: 1370px;
+    width: 1370px;
+  }
+  .home-contact>.container {
+    max-width: 1370px;
+    width: 1370px;
+  }
+  .home-news-content>.container {
+    max-width: 1370px;
+    width: 1370px;
+  }
+  .home-gallery-show>.container {
+    max-width: 1370px;
+    width: 1370px;
+  }
+  .service-section>.container {
+    max-width: 1370px;
+    width: 1370px;
+  }
+  .example-section>.container {
+    max-width: 1370px;
+    width: 1370px;
+  }
+  .elite-section>.container {
+    max-width: 1370px;
+    width: 1370px;
+  }
+  .news-section>.container {
+    max-width: 1370px;
+    width: 1370px;
+  }
+  .brand-row>.container {
+    max-width: 1370px;
+    width: 1370px;
+  }
+  .big-img {
+    padding: 10% 15% 0;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .brand-row {
     .img-box {
@@ -17,6 +86,9 @@
   }
   .big-img {
     padding: 15% 15% 0;
+  }
+  .list-item>a {
+    padding: 0 12px;
   }
 }
 
@@ -79,50 +151,5 @@
   }
   .big-img {
     padding: 50% 0 0 0;
-  }
-}
-
-@media screen and (min-width: 1800px) {
-  .footer>.container {
-    max-width: 1370px;
-  }
-  .carousel>div {
-    height: 680px;
-  } //~~
-  .navbox>.container {
-    max-width: 1370px;
-  }
-  .header>.container {
-    max-width: 1400px;
-  }
-  .search-bar>.container {
-    max-width: 1300px;
-  }
-  .about-brief>.container {
-    max-width: 1370px;
-  }
-  .home-gallery>.container {
-    max-width: 1370px;
-  }
-  .home-news>.container {
-    max-width: 1370px;
-  }
-  .home-contact>.container {
-    max-width: 1370px;
-  }
-  .home-news-content>.container {
-    max-width: 1370px;
-  }
-  .home-gallery-show>.container {
-    max-width: 1370px;
-  }
-  .big-img {
-    padding: 10% 15% 0;
-  }
-}
-
-@media screen and (max-width: 1800px) {
-  .list-item>a {
-    padding: 0 12px;
   }
 }
