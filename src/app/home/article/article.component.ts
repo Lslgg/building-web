@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd, ActivatedRouteSnapshot } from '@angular/router';
 import { BuildingArticle } from '../component/bean/buildingArticle';
 import { BuildingImages } from '../component/bean/buildingImages';
 
@@ -21,14 +21,32 @@ export class ArticleComponent implements OnInit {
 
     img: String = '';
 
-    constructor(private apollo: Apollo, private route: ActivatedRoute) {
+    constructor(private apollo: Apollo, private route: ActivatedRoute, private router: Router) {
         this.type = this.route.snapshot.params['type'];
         this.column = this.route.snapshot.params['column'];
+        this.getData();
+        // this.router.events.subscribe(data => {
+        //     if (data instanceof NavigationEnd) {
+        //         console.log(data);
+        //         console.log(document.referrer);
+        //     }
+        // });
     }
 
     ngOnInit() {
-        this.getData();
+        this.router.events.subscribe(data => {
+            if (data instanceof NavigationEnd) {
+                if (this.type != '' && this.column != '') { }
+                if (!data.url.includes(this.column.toString()) || !data.url.includes(this.type.toString())) {
+
+                }
+            }
+        });
     }
+
+    // ngAfterContentChecked() {
+    //     console.log('test');
+    // }
 
     // 查询 栏目图片 文章内容 
     getData() {
@@ -40,7 +58,7 @@ export class ArticleComponent implements OnInit {
                 img:getBuildingImagesWhere(buildingImages:{type:$type2}){
                     id,imageIds:Images{id,path}
                 }
-            }`,
+            }`, fetchPolicy: "network-only",
             variables: { type: `{ "$eq": "${this.type}" }`, type2: `{ "$eq": "${this.column}" }` }
         }).subscribe(({ data }) => {
             if (data && data.article && data.article[0]) {
@@ -48,7 +66,7 @@ export class ArticleComponent implements OnInit {
             }
             if (data && data.img && data.img[0]) {
                 this.img = data.img[0].imageIds[0].path;
-            }            
+            }
         });
     }
 }

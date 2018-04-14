@@ -1,18 +1,18 @@
 <div class="page-box">
   <ng-container *ngIf="pageArray.length>1">
     <div class="box" *ngIf="index != 1">
-      <a href="{{url}}/1">首页</a>
+      <a routerLink="{{url}}/1">首页</a>
     </div>
     <div class="box" [class.box-active]="item==index" *ngFor="let item of pageArray">
-      <a href="{{url}}/{{item}}">{{item}}</a>
+      <a routerLink="{{url}}/{{item}}">{{item}}</a>
     </div>
     <div class="box" *ngIf="index != pageArray.length">
-      <a href="{{url}}/{{pageArray.length}}">末页</a>
+      <a routerLink="{{url}}/{{pageArray.length}}">末页</a>
     </div>
   </ng-container>
   <ng-container *ngIf="pageArray.length<=1">
     <div class="box">
-      <a href="javascript:void(0);">第一页共{{_count}}条记录</a>
+      <a routerLink="javascript:void(0);">第一页共{{_count}}条记录</a>
     </div>
   </ng-container>
 </div>

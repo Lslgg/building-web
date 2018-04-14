@@ -1,5 +1,5 @@
 <ng-container *ngIf="data">
-  <a class="elite-box" href="/home/galleryShow/elite/5acf25865b300c1778a74453/{{data.id}}" (mouseenter)="onEnter()" (mouseleave)="onLeave()">
+  <a class="elite-box" routerLink="/home/galleryShow/elite/5acf25865b300c1778a74453/{{data.id}}" (mouseenter)="onEnter()" (mouseleave)="onLeave()">
     <div class="img-box">
       <img *ngIf="data.imageIds && data.imageIds[0]" src="{{dataServer}}{{data.imageIds[0].path}}">
     </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'home-search-bar',
@@ -17,7 +18,7 @@ export class SearchBarComponent implements OnInit {
         }
     }
 
-    constructor() { }
+    constructor(private router: Router) { }
 
     ngOnInit() { }
 
@@ -26,6 +27,6 @@ export class SearchBarComponent implements OnInit {
     }
 
     onEnter(info: String) {
-        location.href = "/home/news/news/1/" + info;
+        this.router.navigateByUrl("/home/news/news/1/" + info);
     }
 }

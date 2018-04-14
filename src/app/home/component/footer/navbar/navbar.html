@@ -1,28 +1,25 @@
 <nav class="footer-navbar">
-  <ul>
+  <ul *ngIf="firstMenu && firstMenu.length > 0">
     <li>
-      <a href="#">网站首页</a>
+      <a routerLink="{{firstMenu[0].link}}">{{firstMenu[0].title}}</a>
     </li>
     <li>
-      <a href="#">关于我们</a>
+      <a routerLink="{{firstMenu[1].link}}">{{firstMenu[1].title}}</a>
     </li>
     <li>
-      <a href="#">产品案例</a>
+      <a routerLink="{{firstMenu[2].link}}">{{firstMenu[2].title}}</a>
     </li>
     <li>
-      <a href="#">定制案例</a>
+      <a routerLink="{{firstMenu[3].link}}">{{firstMenu[3].title}}</a>
     </li>
     <li>
-      <a href="#">新闻资讯</a>
+      <a routerLink="{{firstMenu[4].link}}">{{firstMenu[4].title}}</a>
     </li>
     <li>
-      <a href="#">服务优势</a>
+      <a routerLink="{{firstMenu[5].link}}">{{firstMenu[5].title}}</a>
     </li>
     <li>
-      <a href="#">精英团队</a>
-    </li>
-    <li>
-      <a href="#">联系我们</a>
+      <a routerLink="{{firstMenu[6].link}}">{{firstMenu[6].title}}</a>
     </li>
   </ul>
 </nav>

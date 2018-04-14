@@ -1,5 +1,5 @@
-<a class="board" (mouseenter)="onEnter()" (mouseleave)="onLeave()" href="#">
+<a class="board" (mouseenter)="onEnter()" (mouseleave)="onLeave()" routerLink="#">
   某某装饰——精益求精
-  <a href="#" class="board sf-board" [@state]="state" (@state.done)="animationDone($event)">
+  <a routerLink="#" class="board sf-board" [@state]="state" (@state.done)="animationDone($event)">
   </a>
 </a>

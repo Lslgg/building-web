@@ -1,12 +1,12 @@
 <div class="news">
   <h4>
-    <a href="/home/news/news/1">新闻资讯</a>
+    <a routerLink="/home/news/news/1">新闻资讯</a>
   </h4>
   <ng-container *ngFor="let item of newsList">
     <div class="title-box">
       <h5>
         <i class="fa fa-angle-right"></i>&nbsp;&nbsp;
-        <a href="/home/newsContent/news/{{item.id}}">{{item.title}}</a>
+        <a routerLink="/home/newsContent/news/{{item.id}}">{{item.title}}</a>
       </h5>
       <p>
         <i class="fa fa-calendar"></i>&nbsp;&nbsp;{{item.createAt | date:"yyyy-MM-dd"}}</p>

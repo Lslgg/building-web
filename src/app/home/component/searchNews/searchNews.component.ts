@@ -18,8 +18,8 @@ export class SearchNewsComponent implements OnInit {
 
     ngOnInit() { }
 
-    onEnter(info: String) {        
-        location.href = "/home/news/news/1/" + info;
+    onEnter(info: String) {
+        this.router.navigateByUrl("/home/news/news/1/" + info);
     }
 
 }

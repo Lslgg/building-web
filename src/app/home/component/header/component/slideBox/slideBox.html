@@ -1,5 +1,5 @@
-<a class="slide-box" href="#" [class.b-color]="mouseState=='enter' || mouseState=='popup' || mouseState=='down'" (mouseenter)="onEnter()"
-  (mouseleave)="onLeave()">
+<a class="slide-box" href="javascript:void(0);" [class.b-color]="mouseState=='enter' || mouseState=='popup' || mouseState=='down'"
+  (mouseenter)="onEnter()" (mouseleave)="onLeave()">
   <i class="{{iconName}}"> </i>
   <span>{{title}}</span>
   <a class="slide" href="javascript:void(0);" [@mouseState]="mouseState" (@mouseState.done)="animationDone($event)">

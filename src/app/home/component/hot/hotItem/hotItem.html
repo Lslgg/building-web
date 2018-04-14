@@ -1,9 +1,9 @@
 <div class="hot-item">
-  <a href="/home/newsContent/news/{{newsItem.id}}" class="img-box">
+  <a routerLink="/home/newsContent/news/{{newsItem.id}}" class="img-box">
     <img *ngIf="newsItem && newsItem.imageIds && newsItem.imageIds[0]" src="{{dataServer}}{{newsItem.imageIds[0].path}}" />
   </a>
   <div class="text-box">
-    <a href="/home/newsContent/news/{{newsItem.id}}">{{newsItem.title}}</a>
+    <a routerLink="/home/newsContent/news/{{newsItem.id}}">{{newsItem.title}}</a>
     <span>
       <i class="fa fa-calendar"></i>&nbsp;&nbsp;{{newsItem.createAt | date:"yyyy-MM-dd"}}
     </span>

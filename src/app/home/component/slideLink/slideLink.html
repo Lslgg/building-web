@@ -1,5 +1,5 @@
-<a class="slide-link" href="/home/gallery/example/example/1" (mouseenter)="onEnter()" (mouseleave)="onLeave()">
+<a class="slide-link" routerLink="/home/gallery/example/example/1" (mouseenter)="onEnter()" (mouseleave)="onLeave()">
   {{title}}
-  <a href="{{link}}" class="board sf-board" [@state]="state" (@state.done)="animationDone($event)">
+  <a routerLink="{{link}}" class="board sf-board" [@state]="state" (@state.done)="animationDone($event)">
   </a>
 </a>

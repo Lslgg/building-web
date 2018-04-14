@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BuildingMenu } from '../../bean/buildingMenu';
 
 @Component({
     selector: 'home-footer-navbar',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class NavbarComponent implements OnInit {
+
+    @Input() firstMenu: Array<BuildingMenu>;
 
     constructor() { }
 

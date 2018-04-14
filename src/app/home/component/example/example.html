@@ -4,7 +4,7 @@
       <div class="col-12">
         <div class="title">
           <h1>
-            <a href="/home/gallery/example/example/1">定制案例</a>
+            <a routerLink="/home/gallery/example/example/1">定制案例</a>
           </h1>
         </div>
       </div>
@@ -13,7 +13,7 @@
           <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <ng-container *ngFor="let item of data">
               <div class="example-box">
-                <a href="/home/galleryShow/example/{{item.id}}" class="img-box">
+                <a routerLink="/home/galleryShow/example/{{item.id}}" class="img-box">
                   <img *ngIf="item.imageIds && item.imageIds[0]" src="{{dataServer}}{{item.imageIds[0].path}}">
                   <div class="sf-box">
                     <div class="border">
@@ -25,7 +25,7 @@
                   </div>
                 </a>
                 <h3>
-                  <a href="/home/galleryShow/example/{{item.id}}">{{item.title}}</a>
+                  <a routerLink="/home/galleryShow/example/{{item.id}}">{{item.title}}</a>
                 </h3>
               </div>
             </ng-container>

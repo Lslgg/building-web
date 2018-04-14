@@ -1,6 +1,6 @@
 <div class="row news-item">
   <div class="col-sm-4 col-md-4 col-lg-4 col-xl-3" [style.padding.px]=0>
-    <a href="/home/newsContent/news/{{newsItem.id}}" class="img-box">
+    <a routerLink="/home/newsContent/news/{{newsItem.id}}" class="img-box">
       <img src="assets/building-img/1-1P224130532246.jpg" />
     </a>
   </div>
@@ -8,7 +8,7 @@
     <div class="row text-box">
       <div class="col-12">
         <h2>
-          <a href="/home/newsContent/news/{{newsItem.id}}">{{newsItem.title}}</a>
+          <a routerLink="/home/newsContent/news/{{newsItem.id}}">{{newsItem.title}}</a>
         </h2>
       </div>
       <div class="col-sm-3 col-md-3 col-lg-4 col-xl-3">
@@ -21,7 +21,7 @@
             <li>
               <i class="fa fa-tags"></i>&nbsp;&nbsp;
               <span>
-                <a href="/home/news/1">{{newsItem.tag}}</a>
+                <a routerLink="/home/news/1">{{newsItem.tag}}</a>
               </span>
             </li>
             <li>
@@ -36,7 +36,7 @@
           <p>
             {{newsItem.brief}}
           </p>
-          <a href="/home/newsContent/news/{{newsItem.id}}">查看详细&nbsp;
+          <a routerLink="/home/newsContent/news/{{newsItem.id}}">查看详细&nbsp;
             <i class="fa fa-angle-double-right"></i>
           </a>
         </div>

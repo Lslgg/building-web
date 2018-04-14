@@ -38,6 +38,7 @@ import { PageBoxComponent } from './component/pageBox/pageBox.component';
 import { NewsRoutes, NewsRoutedComponents } from './news/news.routing';
 import { ContactRoutes, ContactRoutedComponents } from './contact/contact.routing';
 import { ListPhoneComponent } from './component/nav/component/listPhone/listPhone.component';
+import { HomeGuard } from './service/HomeGuard.service';
 
 var routesList: Routes = [
     ...IndexRoutes,
@@ -49,7 +50,7 @@ var routesList: Routes = [
 
 const routes: Routes = [
     {
-        path: '',
+        path: '', canActivateChild: [HomeGuard],
         component: HomeComponent, data: { title: 'bulding' },
         children: routesList
     }

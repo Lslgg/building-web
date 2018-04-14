@@ -4,7 +4,7 @@
       <div class="col-12">
         <div class="title">
           <h1>
-            <a href="/home/news/news/1">新闻资讯</a>
+            <a routerLink="/home/news/news/1">新闻资讯</a>
           </h1>
         </div>
       </div>
@@ -14,7 +14,7 @@
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-6 col-lg-6 no-padding">
               <div class="img-box">
-                <a href="/home/newsContent/news/{{item.id}}" class="img-content">
+                <a routerLink="/home/newsContent/news/{{item.id}}" class="img-content">
                   <img *ngIf="item.imageIds && item.imageIds[0]" src="{{dataServer}}{{item.imageIds[0].path}}">
                 </a>
                 <h2>
@@ -24,13 +24,13 @@
             <div class="col-sm-12 col-md-12 col-lg-6 col-lg-6 no-padding">
               <div class="text-box">
                 <h2>
-                  <a href="/home/newsContent/news/{{item.id}}" title="办公室装修设计中您是否忽略了“光健康">{{item.title}}</a>
+                  <a routerLink="/home/newsContent/news/{{item.id}}" title="办公室装修设计中您是否忽略了“光健康">{{item.title}}</a>
                 </h2>
                 <p>{{item.brief}}</p>
                 <div class="more">
                   <span>
                     <b>By:&nbsp;</b>{{item.author}}</span>&nbsp;&nbsp;
-                  <a href="/home/news/news/1">查看更多</a>
+                  <a routerLink="/home/news/news/1">查看更多</a>
                 </div>
               </div>
             </div>

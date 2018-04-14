@@ -3,8 +3,8 @@
   <div class="container">
     <div class="row">
       <div class="icon-col col-sm-12 col-md-12 col-lg-3 col-xl-5">
-        <div class="logobox" href="#">
-          <a href="#">
+        <div class="logobox">
+          <a routerLink="/home">
             <img *ngIf="logo && logo.imageIds && logo.imageIds[0]" src="{{dataServer}}{{logo.imageIds[0].path}}" />
           </a>
         </div>
@@ -36,13 +36,13 @@
       网站导航
     </h3>
     <div class="icon-row">
-      <a href="javascript:void(0);" (click)="toggleTap()">
+      <a routerLink="javascript:void(0);" (click)="toggleTap()">
         <i class="fa fa-close"></i>
       </a>
-      <a href="#">
+      <a routerLink="#">
         <i class="fa fa-weibo"></i>
       </a>
-      <a href="#">
+      <a routerLink="#">
         <i class="fa fa-tencent-weibo"></i>
       </a>
     </div>

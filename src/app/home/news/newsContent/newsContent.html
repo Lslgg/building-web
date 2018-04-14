@@ -6,7 +6,7 @@
         <h3>{{newsItem.title}}</h3>
         <div class="info">
           <i class="fa fa-tag"></i>&nbsp;&nbsp;
-          <a href="/home/news/1">{{newsItem.tag}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+          <a routerLink="/home/news/1">{{newsItem.tag}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;
           <i class="fa fa-calendar"></i>&nbsp;&nbsp;{{newsItem.createAt | date:"yyyy-MM-dd"}}
         </div>
         <div class="content" [innerHTML]="newsItem.content">
