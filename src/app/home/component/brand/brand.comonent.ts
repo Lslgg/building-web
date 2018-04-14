@@ -26,7 +26,6 @@ export class BrandComponent implements OnInit {
             for (let i = 0; i < data[0].imageIds.length; i++) {
                 this.dataList.push(data[0].imageIds[i].path);
             }
-            console.log(this.dataList);
             this.getInit();
         }
     }
@@ -42,13 +41,14 @@ export class BrandComponent implements OnInit {
     }
 
     ngAfterViewInit() {
-        let colWidth = document.getElementById('brand-col')['offsetWidth'];
-        let itemWidth = document.getElementById('brand-box')['offsetWidth'];
-        this.colWidth = colWidth;
-        this.itemWidth = (colWidth / 100) * 2 + itemWidth;
-        if (this.isSlide) {
-            this.marginLeft = -this.itemWidth;
-        }
+        //     let colWidth = document.getElementById('brand-col')['offsetWidth'];
+        //     let itemWidth = document.getElementById('brand-box')['offsetWidth'];
+        //     this.colWidth = colWidth;
+        //     this.itemWidth = (colWidth / 100) * 2 + itemWidth;
+        //     if (this.isSlide) {
+        //         this.marginLeft = -this.itemWidth;
+        //     }
+        console.log('after');
     }
 
     ngOnInit() { }
@@ -87,6 +87,16 @@ export class BrandComponent implements OnInit {
                 this.list.push(this.dataList[i]);
             }
         }
+        let to = function () {
+            let colWidth = document.getElementById('brand-col')['offsetWidth'];
+            let itemWidth = document.getElementById('brand-box')['offsetWidth'];
+            this.colWidth = colWidth;
+            this.itemWidth = (colWidth / 100) * 2 + itemWidth;
+            if (this.isSlide) {
+                this.marginLeft = -this.itemWidth;
+            }
+        }
+        window.setTimeout(to, 2000);
     }
 
     onClick(flag: String) {
