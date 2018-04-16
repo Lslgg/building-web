@@ -3,10 +3,9 @@ import { Component, OnInit, ElementRef, ViewChild, Output, EventEmitter, Input }
 @Component({
     selector: '.data-th',
     styleUrls: ['./table.css'],
-    template: ` 
-        {{title}}
-        <ng-content></ng-content>
-    `
+    template: `
+                                                         {{title}}
+        <ng-content></ng-content>`
 })
 
 export class TheadThComponent implements OnInit {
@@ -22,6 +21,8 @@ export class TheadThComponent implements OnInit {
     @Input() type: string;
     @Input() columnSpan: number;
     @Input() rowsetSpan: number;
+    @Input() stateName1: string;
+    @Input() stateName2: string;
 
     ngOnInit() { }
 

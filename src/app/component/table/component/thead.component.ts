@@ -4,29 +4,29 @@ import { TheadThComponent } from './thead.th.component';
 @Component({
     selector: '.data-thead',
     styleUrls: ['./table.css'],
-    template: ` 
+    template: `
         <tr class="theadTr" #theadTr>
-            <th *ngIf="isShowCheckbox" name="#" type="checkbox" width="20"> 
-                <mat-checkbox (click)="allchecked(checked)"></mat-checkbox>
-            </th>
-            <ng-content class=".data-th"></ng-content>
-        </tr>
-    `
+        	<th *ngIf="isShowCheckbox" name="#" type="checkbox" width="20">
+        		<mat-checkbox (click)="allchecked(checked)"></mat-checkbox>
+        	</th>
+        	<ng-content class=".data-th"></ng-content>
+        </tr>`
 })
 
 export class TheadComponent implements OnInit {
 
     rowList: Array<{
         name: string, title: string,
-        type: string, columnSpan: number, rowsetSpan: number
+        type: string, columnSpan: number, rowsetSpan: number,
+        stateName1: string, stateName2: string
     }> = [];
 
     @Input() isShowCheckbox: boolean = true;
-    
+
     @Input() checked: boolean = false;
 
     //实现自动全选,如果是自动查找不需要给值
-    @Input() dataList:Array<Object>=[];
+    @Input() dataList: Array<Object> = [];
 
     constructor() {
 
@@ -38,9 +38,12 @@ export class TheadComponent implements OnInit {
 
     ngAfterContentInit() {
         //如果是显示checkbox 添加记录到tbody也显示checkbox
-        if(this.isShowCheckbox){
-            this.rowList.push({ name:"checkbox", title:"checkbox", 
-                type:"checkbox", columnSpan:1, rowsetSpan:1 });
+        if (this.isShowCheckbox) {
+            this.rowList.push({
+                name: "checkbox", title: "checkbox",
+                type: "checkbox", columnSpan: 1, rowsetSpan: 1,
+                stateName1: '', stateName2: ''
+            });
         }
 
         this.theadths.forEach(p => {
@@ -49,7 +52,9 @@ export class TheadComponent implements OnInit {
             let type = p.type;
             let columnSpan = p.columnSpan;
             let rowsetSpan = p.rowsetSpan;
-            this.rowList.push({ name, title, type, columnSpan, rowsetSpan });
+            let stateName1 = p.stateName1;
+            let stateName2 = p.stateName2;
+            this.rowList.push({ name, title, type, columnSpan, rowsetSpan, stateName1, stateName2 });
         })
     }
 
@@ -57,6 +62,6 @@ export class TheadComponent implements OnInit {
 
     allchecked(checked: boolean) {
         this.checked = !checked;
-        this.dataList.forEach(p=>p["isCheck"]=this.checked);
+        this.dataList.forEach(p => p["isCheck"] = this.checked);
     }
 }

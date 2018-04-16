@@ -61,15 +61,21 @@ export class TbodyComponent implements OnInit {
     //统计处理的事件
     @Output() onLoadTotal = new EventEmitter<any>();
 
+    @Output() onDetail = new EventEmitter<string>();
+
     //获取分页控件
     @ContentChild(PagiationComponent) Pagiation: PagiationComponent;
 
     @Output() onData = new EventEmitter<Boolean>();
 
+    @Input() stateName1: string;
+
+    @Input() stateName2: string;
+
     //表格头部信息根据这信息来处理表格
     rowNameList: Array<{
         name: string, title: string,
-        type: string, columnSpan: number, rowsetSpan: number
+        type: string, columnSpan: number, rowsetSpan: number, stateName1: string, stateName2: string
     }> = [];
 
     //分页行跨列
@@ -300,6 +306,10 @@ export class TbodyComponent implements OnInit {
     //根据类型来处理不同业务
     setInfo(info: IdType) {
         this.onSetInfo.emit(info);
+    }
+
+    showDetail(id: string) {
+        this.onDetail.emit(id);
     }
 
 }

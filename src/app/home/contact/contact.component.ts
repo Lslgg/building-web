@@ -51,4 +51,24 @@ export class ContactComponent implements OnInit {
             }
         });
     }
+
+    sent(title: string, name: string, email: string, phone: string, content: string) {
+        const sql = gql`mutation($title:String,$name:String,$email:String,$phone:String,$content:String) {
+            info:saveBuildingContact(buildingContact:{title:$title,name:$name,email:$email,phone:$phone,content:$content,isValid:true}) {
+              id,name
+            }
+          }`;
+        this.apollo.mutate<{ info: any }>({
+            mutation: sql,
+            variables: {
+                title: title == "" ? '空' : title, name: name == "" ? '空' : title,
+                email: email == "" ? '空' : title, phone: phone == "" ? '空' : title,
+                content: content == "" ? '空' : title
+            }
+        }).subscribe(data => {
+            if (data && data.data && data.data.info && data.data.info.id) {
+                alert('发送成功！\n你好：' + data.data.info.name + '，信息已收到，我们会尽快联系你。');
+            }
+        })
+    }
 }

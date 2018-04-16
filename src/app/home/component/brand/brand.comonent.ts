@@ -50,14 +50,17 @@ export class BrandComponent implements OnInit {
             margin = col.offsetWidth.valueOf() / 100;
         }
         if (flag == 'left') {
-            this.marginLeft = this.marginLeft - itemWidth - margin * 2;
-            this.index = this.index++;
-        } else if (flag == 'right') {
-            if (this.marginLeft == 0) {
+            if (this.index - 1 == 0) {
                 return;
             }
             this.marginLeft = this.marginLeft + itemWidth + margin * 2;
-            this.index = this.index--;
+            this.index--;
+        } else if (flag == 'right') {
+            if (this.index == item.length) {
+                return;
+            }
+            this.marginLeft = this.marginLeft - itemWidth - margin * 2;
+            this.index++;
         }
     }
 }

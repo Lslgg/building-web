@@ -1,0 +1,47 @@
+<template-panel-table Title="新闻/文章管理" addUrl="admin/addBuildingContact" style="position: relative;">
+  <data-table [isSearch]="true" [moduleStr]="buildingContact">
+    <search-item name="isValid" title="类型" [dataList]="typeList" type="select" condition="$eq" class="col-md-12"></search-item>
+    <thead class="data-thead">
+      <th class="data-th" name="title" type="text" title="主题"></th>
+      <th class="data-th" name="name" type="text" title="名字"></th>
+      <th class="data-th" name="createAt" type="date" title="日期"></th>
+      <th class="data-th" name="isValid" type="state" stateName1="未读" stateName2="已读" title="状态"></th>
+      <th class="data-th" name="#" type="operation" title="操作"></th>
+    </thead>
+    <tbody class="data-tbody" operation="标记|查看|删除" #tbody (onDetail)="onDetail($event,tbody.dataList)" (onIsValue)="onSet($event,tbody.dataList)"></tbody>
+  </data-table>
+
+
+  <div class="card detail-card" [class.active-detail]="detail">
+    <div class="card-header card-header-icon" data-background-color="rose">
+      <i class="material-icons">settings</i>
+    </div>
+    <div class="card-content" *ngIf="detail">
+      <h4 class="card-title">详细</h4>
+      <div class="content-row">
+        <p>标题：</p>
+        <p>{{detail.title}}</p>
+      </div>
+      <div class="content-row">
+        <p>名字：</p>
+        <p>{{detail.name}}</p>
+      </div>
+      <div class="content-row">
+        <p>邮箱：</p>
+        <p>{{detail.email}}</p>
+      </div>
+      <div class="content-row">
+        <p>电话：</p>
+        <p>{{detail.phone}}</p>
+      </div>
+      <div class="content-row">
+        <p>内容：</p>
+        <p>{{detail.content}}</p>
+      </div>
+      <div class="btn-box">
+        <button type="submit" class="btn btn-fill btn-rose " (click)="back()">返回</button>
+      </div>
+    </div>
+  </div>
+
+</template-panel-table>

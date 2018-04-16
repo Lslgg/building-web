@@ -8,23 +8,14 @@
   <!--list true or false 列表-->
   <ng-container *ngSwitchCase="'state'">
     <ng-container *ngIf="title">
-      <span class="badge badge-success">有效</span>
+      <span class="badge badge-success" style="color: #fff;background-color: #dc3545;">{{stateName1}}</span>
     </ng-container>
     <ng-container *ngIf="!title">
-      <span class="badge badge-default">无效</span>
+      <span class="badge b  adge-default" style="color: #fff;background-color: #28a745;">{{stateName2}}</span>
     </ng-container>
   </ng-container>
   <!--list {string}列表-->
   <!--list true or false 列表-->
-  <ng-container *ngSwitchCase="'judge'">
-    <ng-container *ngIf="title">
-      <span class="badge badge-success">是</span>
-    </ng-container>
-    <ng-container *ngIf="!title">
-      <span class="badge badge-default">否</span>
-    </ng-container>
-  </ng-container>
-  <!--list {string}列表-->
   <ng-container *ngSwitchCase="'list'">
     <ng-container *ngFor="let val of title">
       <span class="badge badge-success">{{ val }}</span>

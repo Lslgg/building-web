@@ -23,22 +23,22 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                <input type="text" placeholder="主题" />
+                <input type="text" placeholder="主题" #title/>
               </div>
               <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                <input type="text" placeholder="名字" />
+                <input type="text" placeholder="名字" #name/>
               </div>
               <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                <input type="text" placeholder="邮箱" />
+                <input type="text" placeholder="邮箱" #email/>
               </div>
               <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                <input type="text" placeholder="电话/手机" />
+                <input type="text" placeholder="电话/手机" #phone/>
               </div>
               <div class="col-12">
-                <textarea placeholder="留言内容"></textarea>
+                <textarea placeholder="留言内容" #content></textarea>
               </div>
               <div class="col-12">
-                <a routerLink="javascript:void(0);">立即提交</a>
+                <a href="javascript:void(0);" (click)="sent(title.value,name.value,email.value,phone.value,content.value)">立即提交</a>
               </div>
             </div>
           </div>

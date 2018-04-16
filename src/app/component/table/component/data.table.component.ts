@@ -54,8 +54,9 @@ export class DataTableComponent implements OnInit {
 
     //根据条件查询
     search() {
-        var list= this.getCondition();
-        this.tbody.conditionList =list;
+        var list = this.getCondition();
+        console.log(list);
+        this.tbody.conditionList = list;
         if (this.tbody.IsAutomaticList) {
             this.tbody.getPage(1);
         }

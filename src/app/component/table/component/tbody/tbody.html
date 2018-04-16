@@ -25,6 +25,12 @@
               <ng-container *ngSwitchCase="'启用'">
                 <a href="javascript:;" (click)="isValue(item[key])">{{info}}</a>
               </ng-container>
+              <ng-container *ngSwitchCase="'标记'">
+                <a href="javascript:;" (click)="isValue(item[key])">{{info}}</a>
+              </ng-container>
+              <ng-container *ngSwitchCase="'查看'">
+                <a href="javascript:;" (click)="showDetail(item[key])">{{info}}</a>
+              </ng-container>
               <ng-container *ngSwitchDefault>
                 <a href="javascript:;" (click)="setInfo({id:item[key],type:info})">{{info}}</a>
               </ng-container>
@@ -34,13 +40,8 @@
       </ng-container>
 
       <ng-container *ngSwitchDefault>
-        <td [attr.colspan]="row.columnSpan" 
-            [title]="item[row.name]" 
-            [id]="item[key]" 
-            [field]="row.name" 
-            [colType]="row.type"
-            [updateUrl]="moduleStr?.url"
-            [item]="item" (onSetInfo)="setInfo($event)" tbody-td></td>
+        <td [attr.colspan]="row.columnSpan" [title]="item[row.name]" [id]="item[key]" [field]="row.name" [colType]="row.type" [updateUrl]="moduleStr?.url"
+          [item]="item" [stateName1]="row.stateName1" [stateName2]="row.stateName2" (onSetInfo)="setInfo($event)" tbody-td></td>
       </ng-container>
 
     </ng-container>

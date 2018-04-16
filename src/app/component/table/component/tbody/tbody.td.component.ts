@@ -20,9 +20,11 @@ export class TbodyTdComponent implements OnInit {
 
     @Input() updateUrl: string;
 
+    @Input() stateName1: string;
+
+    @Input() stateName2: string;
+
     @Output() onSetInfo = new EventEmitter<IdType>();
-
-
 
     constructor(private router: Router) { }
 
@@ -39,7 +41,7 @@ export class TbodyTdComponent implements OnInit {
         this.onSetInfo.emit(info);
     }
 
-    allCheck(isCheck: boolean) {        
+    allCheck(isCheck: boolean) {
         for (var i = 0; i < this.item["checkboxList"].length; i++) {
             var self = this.item["checkboxList"][i];
             self["isCheck"] = !isCheck;
