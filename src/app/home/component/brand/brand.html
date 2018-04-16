@@ -1,8 +1,8 @@
 <section class="brand-row">
   <div class="container">
     <div class="row">
-      <div class="col-12 brand-col" id="brand-col" [style.marginLeft.px]="marginLeft" [class.col-ani]="flag">
-        <div class="img-box" *ngFor="let item of list" id="brand-box">
+      <div class="col-12 brand-col" id="brand-col" [style.marginLeft.px]="marginLeft">
+        <div class="img-box brand-item" *ngFor="let item of list">
           <img src="{{dataServer}}{{item}}">
         </div>
       </div>

@@ -19,22 +19,30 @@ export class HomeGuard implements CanActivate, CanActivateChild {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> | boolean {
 
-
         if (route.url && route.url[0] && route.url[0].path) {
+
             if (route.url[0].path == 'article') {
-                var column = this.route.snapshot.params['column'];
-                var type = this.route.snapshot.params['type'];
                 if (this.router.url.includes('home/rarticle')) {
-                    console.log(111);
-                    // this.router.navigateByUrl('home/article/' + column + '/' + type);
+                    return true;
                 } else if (this.router.url.includes('home/article')) {
-                    console.log(222);
-                    // this.router.navigateByUrl('home/rarticle/' + column + '/' + type);
+                    let column = route.params['column'];
+                    let type = route.params['type'];
+                    this.router.navigateByUrl('home/rarticle/' + column + '/' + type);
                 }
             }
+
+            if (route.url[0].path == 'gallery') {
+                if (this.router.url.includes('home/rgallery')) {
+                    return true;
+                } else if (this.router.url.includes('home/gallery')) {
+                    let column = route.params['column'];
+                    let type = route.params['type'];
+                    let index = route.params['index'];
+                    this.router.navigateByUrl('home/rgallery/' + column + '/' + type + '/' + index);
+                }
+            }
+
         }
-
-
         return true;
 
     }
