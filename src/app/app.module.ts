@@ -1,16 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UMeditorModule } from 'ngx-umeditor';
 
 import { AppRoutingModule } from './app.routing'
 import { AppComponent } from './app.component';
-import { LocationStrategy,HashLocationStrategy } from '@angular/common';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ApolloModule } from 'apollo-angular';
 import { HttpLinkModule } from 'apollo-angular-link-http';
 import { CommonData } from './common/common';
+
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { CommonData } from './common/common';
     HttpClientModule,
     ApolloModule,
     HttpLinkModule,
-    UMeditorModule
+    UMeditorModule,
   ],
   declarations: [
     AppComponent,

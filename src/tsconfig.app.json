@@ -6,6 +6,12 @@
     "module": "es2015",
     "types": [
       "node"
+    ],
+    "lib": [
+      "es5",
+      "es6",
+      "dom",
+      "esnext.asynciterable"
     ]
   },
   "exclude": [

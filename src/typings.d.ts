@@ -22,8 +22,8 @@ type Condition = {
 }
 
 type TableStr = {
-    data: string,
-    delete?: string,
+    data: any,
+    delete?: any,
     url?: string,
     where?: string | object,
     isPage?: boolean,
@@ -32,7 +32,7 @@ type TableStr = {
 type FormStr = {
     data: string,
     module?: string,
-    save?: string,
+    save?: any,
     url?: string
 }
 
@@ -42,12 +42,12 @@ type IdType = { id: string, type: string };
 /**
  * 公共的数据
  */
-interface CommonData{
+interface CommonData {
     /**
      * 当前月开始日期
      */
     startDate: string;
-    
+
     /**
      * 当前月结束日期
     */
@@ -55,13 +55,13 @@ interface CommonData{
     /**
      * 当前数据服务器
     */
-    dataServer:String;
+    dataServer: String;
 
-     /**
-     * 日期格式
-     * @param date 日期
-     * @param format 格式 默认 'YYYY-MM-DD' 
-     */
-    toDateFormat(date?:Date,format?:string);
+    /**
+    * 日期格式
+    * @param date 日期
+    * @param format 格式 默认 'YYYY-MM-DD' 
+    */
+    toDateFormat(date?: Date, format?: string);
 }
 
