@@ -27,7 +27,7 @@ export class GalleryComponent implements OnInit {
     constructor(private apollo: Apollo, private route: ActivatedRoute) {
         this.index = parseInt(this.route.snapshot.params['index']);
         this.type = 'gallery-' + this.route.snapshot.params['type'];
-        this.column = 'gallery-' + this.route.snapshot.params['column'];
+        this.column = this.route.snapshot.params['column'];
     }
 
     ngOnInit() {
@@ -47,8 +47,10 @@ export class GalleryComponent implements OnInit {
             query: sql,
             variables: variables
         }).subscribe(({ data }) => {
+            console.log(data);
             if (data && data.galleryList) {
                 this.galleryList = data.galleryList;
+                console.log(this.galleryList);
             }
             if (data && data.count) {
                 this.count = data.count;

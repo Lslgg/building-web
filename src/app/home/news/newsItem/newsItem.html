@@ -1,7 +1,7 @@
 <div class="row news-item">
   <div class="col-sm-4 col-md-4 col-lg-4 col-xl-3" [style.padding.px]=0>
     <a routerLink="/home/newsContent/news/{{newsItem.id}}" class="img-box">
-      <img src="assets/building-img/1-1P224130532246.jpg" />
+      <img *ngIf="newsItem && newsItem.imageIds && newsItem.imageIds[0]" [defaultImage]="'assets/logging.gif'" lazyLoad="{{dataServer}}{{newsItem.imageIds[0].path}}">
     </a>
   </div>
   <div class="col-sm-8 col-md-8 col-lg-8 col-xl-9" [style.paddingLeft.px]=25 *ngIf="newsItem">

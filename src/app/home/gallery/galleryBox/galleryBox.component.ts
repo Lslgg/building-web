@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { BuildingImages } from '../../component/bean/buildingImages';
 import { ActivatedRoute } from '@angular/router';
 
@@ -14,9 +14,10 @@ export class GalleryBoxComponent implements OnInit {
 
     column: String;
 
-    imgList: Array<String> = ['assets/building-img/1-1P2241022380-L.jpg', 'assets/building-img/1-1P2241023190-L.jpg'];
+    dataServer: String = '';
 
-    constructor(private route: ActivatedRoute) {
+    constructor(private route: ActivatedRoute, @Inject("commonData") private cdata: CommonData) {
+        this.dataServer = this.cdata.dataServer + '/';
         this.column = this.route.snapshot.params['column'];
     }
 

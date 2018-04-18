@@ -1,6 +1,6 @@
 <div class="hot-item">
   <a routerLink="/home/newsContent/news/{{newsItem.id}}" class="img-box">
-    <img *ngIf="newsItem && newsItem.imageIds && newsItem.imageIds[0]" src="{{dataServer}}{{newsItem.imageIds[0].path}}" />
+    <img *ngIf="newsItem && newsItem.imageIds && newsItem.imageIds[0]" [defaultImage]="'assets/logging.gif'" lazyLoad="{{dataServer}}{{newsItem.imageIds[0].path}}">
   </a>
   <div class="text-box">
     <a routerLink="/home/newsContent/news/{{newsItem.id}}">{{newsItem.title}}</a>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { BuildingImages } from '../../component/bean/buildingImages';
 import { Apollo } from 'apollo-angular';
 import { ActivatedRoute } from '@angular/router';
@@ -17,17 +17,18 @@ export class GalleryShowComponent implements OnInit {
 
     column: String;
 
-    imgList: Array<String> = ['assets/building-img/1-1P2241022380-L.jpg', 'assets/building-img/1-1P2241023190-L.jpg', 'assets/building-img/1-1P2241023190-L.jpg', 'assets/building-img/1-1P2241023190-L.jpg', 'assets/building-img/1-1P2241023190-L.jpg', 'assets/building-img/1-1P2241023190-L.jpg', 'assets/building-img/1-1P2241023190-L.jpg'];
-
-    imgItem: BuildingImages;
+    imgList: Array<String> = [];
 
     flag: Boolean = false;
 
     imgPath: String = '';
 
-    constructor(private apollo: Apollo, private route: ActivatedRoute) {
+    dataServer: String = '';
+
+    constructor(private apollo: Apollo, private route: ActivatedRoute, @Inject("commonData") private cdata: CommonData) {
         this.id = this.route.snapshot.params['id'];
         this.column = this.route.snapshot.params['column'];
+        this.dataServer = this.cdata.dataServer + '/';
     }
 
     ngOnInit() {
@@ -35,7 +36,9 @@ export class GalleryShowComponent implements OnInit {
     }
 
     show(info: String) {
-        this.imgPath = info;
+        if (info != '') {
+            this.imgPath = info;            
+        }
         this.flag = !this.flag;
     }
 
@@ -51,8 +54,11 @@ export class GalleryShowComponent implements OnInit {
             query: sql,
             variables: variables
         }).subscribe(({ data }) => {
-            if (data && data.imgItem) {
-                this.imgItem = data.imgItem;
+            if (data && data.imgItem && data.imgItem.imageIds) {
+                this.imgList = [];
+                for (let i = 0; i < data.imgItem.imageIds.length; i++) {
+                    this.imgList.push(data.imgItem.imageIds[i].path);
+                }
             }
         });
     }

@@ -23,25 +23,26 @@ import { BuildingImages } from '../bean/buildingImages';
 
 export class SlideComponent implements OnInit {
 
-    @Input() toNextImg: Boolean = true;
-    @Input() startIndex: Number = 0;
     @Input()
     set data(data: Array<BuildingImages>) {
         if (data && data[0] && data[0].imageIds) {
             this.list = [];
             for (let i = 0; i < data[0].imageIds.length; i++) {
-                this.list.push(data[0].imageIds[0].path);
+                this.list.push(data[0].imageIds[i].path);
+                this.getList();
             }
-            this.getList();
         }
     }
-    @Output() clickImg = new EventEmitter<any>();
     list: Array<String> = [];
+    @Input() toNextImg: Boolean = true;
+    @Input() startIndex: Number = 0;
+    @Output() clickImg = new EventEmitter<any>();
     strArr: Array<String> = [];
     ponintArray: Array<boolean> = [];
     state: string = "init";
     marginLeft: string = "-100%";
-    dataServer: String = '';
+    dataServer: string = '';
+    height: number = 680;
 
     constructor(@Inject("commonData") private cdata: CommonData,
         private apollo: Apollo) {
@@ -49,6 +50,8 @@ export class SlideComponent implements OnInit {
     }
 
     ngOnInit() {
+        console.log(window.innerWidth);
+        this.getList();
     }
 
     toggleState(flag: number) {
@@ -106,7 +109,9 @@ export class SlideComponent implements OnInit {
     }
 
     getList() {
-        this.initList();
+        if (this.list.length > 0) {
+            this.initList();
+        }
     }
 
     initList() {
@@ -125,6 +130,8 @@ export class SlideComponent implements OnInit {
         }
         var l = 1;
         while (l < this.startIndex) {
+            // this.toggleState(1);       
+            // i++;
             var t = this.strArr[1];
             for (var i = 1; i < this.strArr.length - 1; i++) {
                 this.strArr[i] = this.strArr[i + 1];

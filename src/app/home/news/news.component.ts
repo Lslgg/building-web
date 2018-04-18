@@ -30,6 +30,7 @@ export class NewsComponent implements OnInit {
         this.url = '/home/news/' + this.route.snapshot.params['column'];
         this.index = parseInt(this.route.snapshot.params['index']);
         this.search = this.route.snapshot.params['search'];
+        this.search = this.route.snapshot.params['search'];
         if (!this.search) {
             this.search = '';
         }

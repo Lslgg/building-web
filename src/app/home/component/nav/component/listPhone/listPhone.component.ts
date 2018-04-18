@@ -16,12 +16,18 @@ export class ListPhoneComponent implements OnInit {
 
     flag: Boolean = false;
 
+    @Output() onLink: EventEmitter<Boolean> = new EventEmitter<Boolean>();
+
     constructor() { }
 
     ngOnInit() { }
 
     onClick() {
         this.flag = !this.flag;
+    }
+
+    clickLink() {
+        this.onLink.emit(true);
     }
 
 }

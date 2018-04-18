@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-12 brand-col" id="brand-col" [style.marginLeft.px]="marginLeft">
         <div class="img-box brand-item" *ngFor="let item of list">
-          <img src="{{dataServer}}{{item}}">
+          <img [defaultImage]="'assets/logging.gif'" lazyLoad="{{dataServer}}{{item}}">
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@
             <div class="col-sm-12 col-md-12 col-lg-6 col-lg-6 no-padding">
               <div class="img-box">
                 <a routerLink="/home/newsContent/news/{{item.id}}" class="img-content">
-                  <img *ngIf="item.imageIds && item.imageIds[0]" src="{{dataServer}}{{item.imageIds[0].path}}">
+                  <img *ngIf="item.imageIds && item.imageIds[0]" [defaultImage]="'assets/logging.gif'" lazyLoad="{{dataServer}}{{item.imageIds[0].path}}">
                 </a>
                 <h2>
                   <i class="fa fa-calendar"></i>&nbsp;&nbsp;{{item.createAt | date:"yyyy-MM-dd"}}</h2>

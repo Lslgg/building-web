@@ -1,5 +1,5 @@
 <section class="pic-row" *ngIf="colImg && colImg.imageIds && colImg.imageIds[0]">
   <div class="img-box">
-    <img src="{{dataServer}}{{colImg.imageIds[0].path}}" />
+    <img [defaultImage]="'assets/logging.gif'" lazyLoad="{{dataServer}}{{colImg.imageIds[0].path}}">
   </div>
 </section>

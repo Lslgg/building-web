@@ -14,7 +14,7 @@
             <ng-container *ngFor="let item of data">
               <div class="example-box">
                 <a routerLink="/home/galleryShow/example/{{item.id}}" class="img-box">
-                  <img *ngIf="item.imageIds && item.imageIds[0]" src="{{dataServer}}{{item.imageIds[0].path}}">
+                  <img *ngIf="item.imageIds && item.imageIds[0]" [defaultImage]="'assets/logging.gif'" lazyLoad="{{dataServer}}{{item.imageIds[0].path}}">
                   <div class="sf-box">
                     <div class="border">
                       <div class="content">

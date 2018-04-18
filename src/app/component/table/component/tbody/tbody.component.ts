@@ -261,7 +261,7 @@ export class TbodyComponent implements OnInit {
     private getInitWhere(where: Array<string>) {
         var keys = Object.keys(this.moduleStr.where);
         var values = [];
-        for (var i = 0; i < subKeys.length; i++) {
+        for (var i = 0; i < keys.length; i++) {
             var field2 = this.moduleStr.where[keys[i]];
             values.push(field2);
         }

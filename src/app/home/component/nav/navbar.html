@@ -5,7 +5,7 @@
       <div class="icon-col col-sm-12 col-md-12 col-lg-3 col-xl-5">
         <div class="logobox">
           <a routerLink="/home">
-            <img *ngIf="logo && logo.imageIds && logo.imageIds[0]" src="{{dataServer}}{{logo.imageIds[0].path}}" />
+            <img *ngIf="logo && logo.imageIds && logo.imageIds[0]" [defaultImage]="'assets/logging.gif'" lazyLoad="{{dataServer}}{{logo.imageIds[0].path}}">
           </a>
         </div>
         <span class="nav-btm d-block d-lg-none" (click)="toggleTap()">
@@ -39,10 +39,10 @@
       <a routerLink="javascript:void(0);" (click)="toggleTap()">
         <i class="fa fa-close"></i>
       </a>
-      <a routerLink="#">
+      <a routerLink="#" (click)="toggleTap()">
         <i class="fa fa-weibo"></i>
       </a>
-      <a routerLink="#">
+      <a routerLink="#" (click)="toggleTap()">
         <i class="fa fa-tencent-weibo"></i>
       </a>
     </div>
@@ -50,14 +50,14 @@
       <input type="text" placeholder="输入关键字..." #data (keyup.enter)="onEnter(data.value)">
     </div>
     <nav class="nav-phone">
-      <ul>
-        <li class="home-list-phone" link="/" title="网站首页"></li>
-        <li class="home-list-phone" link="/home/article/test" title="关于我们" [secondList]="aboutList"></li>
-        <li class="home-list-phone" link="/home/gallery/test/1" title="定制案例" [secondList]="nullList"></li>
-        <li class="home-list-phone" link="/home/news/1" title="新闻资讯" [secondList]="nullList"></li>
-        <li class="home-list-phone" title="服务优势" [secondList]="serviceList"></li>
-        <li class="home-list-phone" link="/home/gallery/test/1" title="精英团队" [secondList]="eliteList"></li>
-        <li class="home-list-phone" link="/home/contact" title="联系我们" [secondList]="nullList"></li>
+      <ul *ngIf="firstMenu">
+        <li class="home-list-phone" link="{{firstMenu[0].link}}" title="{{firstMenu[0].title}}" (onLink)="toggleTap()"></li>
+        <li class="home-list-phone" link="{{firstMenu[1].link}}" title="{{firstMenu[1].title}}" (onLink)="toggleTap()" [secondList]="aboutList"></li>
+        <li class="home-list-phone" link="{{firstMenu[2].link}}" title="{{firstMenu[2].title}}" (onLink)="toggleTap()" [secondList]="nullList"></li>
+        <li class="home-list-phone" link="{{firstMenu[3].link}}" title="{{firstMenu[3].title}}" (onLink)="toggleTap()" [secondList]="nullList"></li>
+        <li class="home-list-phone" link="{{firstMenu[4].link}}" title="{{firstMenu[4].title}}" (onLink)="toggleTap()" [secondList]="serviceList"></li>
+        <li class="home-list-phone" link="{{firstMenu[5].link}}" title="{{firstMenu[5].title}}" (onLink)="toggleTap()" [secondList]="eliteList"></li>
+        <li class="home-list-phone" link="{{firstMenu[6].link}}" title="{{firstMenu[6].title}}" (onLink)="toggleTap()" [secondList]="nullList"></li>
       </ul>
     </nav>
   </div>

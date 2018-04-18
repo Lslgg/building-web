@@ -1,6 +1,7 @@
 <div class="gallery-box">
   <a routerLink="/home/galleryShow/{{column}}/{{newsItem.id}}" class="img-box">
-    <img src="assets/building-img/1-1P224123241W4.jpg" />
+    <img *ngIf="newsItem && newsItem.imageIds && newsItem.imageIds[0] && newsItem.imageIds[0].path" [defaultImage]="'assets/logging.gif'"
+      lazyLoad="{{dataServer}}{{newsItem.imageIds[0].path}}">
   </a>
   <h5>
     <a routerLink="/home/galleryShow/{{column}}/{{newsItem.id}}">{{newsItem.title}}</a>

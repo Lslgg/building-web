@@ -1,7 +1,7 @@
 <div class=" row service-box" (mouseenter)="onEnter()" (mouseleave)="onLeave()">
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d-none d-sm-block">
     <div class="img-box">
-      <img *ngIf="data && data[0] && data[0].imageIds && data[0].imageIds[0]" src="{{dataServer}}{{data[0].imageIds[0].path}}" />
+      <img *ngIf="data && data[0] && data[0].imageIds && data[0].imageIds[0]" [defaultImage]="'assets/logging.gif'" lazyLoad="{{dataServer}}{{data[0].imageIds[0].path}}">
     </div>
   </div>
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">

@@ -14,7 +14,7 @@
           <p>乘车路线：乘坐轨道交通68号地铁在体育西站下，出站100米到 </p> -->
         </div>
         <div class="img-box">
-          <img *ngIf="img && img[0] && img[0].imageIds && img[0].imageIds[0]" src="{{dataServer}}{{img[0].imageIds[0].path}}">
+          <img *ngIf="img && img[0] && img[0].imageIds && img[0].imageIds[0]" [defaultImage]="'assets/logging.gif'" lazyLoad="{{dataServer}}{{img[0].imageIds[0].path}}">
         </div>
         <div class="form-box">
           <h3>
