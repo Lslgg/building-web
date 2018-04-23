@@ -2,7 +2,7 @@
 
 # compiled output
 /dist
-/building
+building
 /tmp
 /out-tsc
 

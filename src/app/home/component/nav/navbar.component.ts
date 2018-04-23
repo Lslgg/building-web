@@ -36,7 +36,6 @@ export class NavBarComponent implements OnInit {
         var obj = this;
         window.onscroll = function () {
             var t = document.documentElement.scrollTop || document.body.scrollTop;
-            document.body.setAttribute('style', 'pointer-events: none;transition: none;');
             if (t > 48) {
                 if (!obj.tFlag) {
                     obj.tFlag = true;

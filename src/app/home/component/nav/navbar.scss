@@ -1,5 +1,4 @@
 .nav-container {
-    overflow: hidden;
     .navbox {
         background-color: #fff;
         .container {
@@ -53,8 +52,7 @@
     .nav-tap {
         position: fixed;
         top: 0;
-        bottom: 0; // right: -440px;
-        // width: 440px;
+        bottom: 0;
         height: 100%;
         background-color: #fff;
         transition: right 0.3s;
