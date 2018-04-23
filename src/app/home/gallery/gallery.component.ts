@@ -47,10 +47,8 @@ export class GalleryComponent implements OnInit {
             query: sql,
             variables: variables
         }).subscribe(({ data }) => {
-            console.log(data);
             if (data && data.galleryList) {
                 this.galleryList = data.galleryList;
-                console.log(this.galleryList);
             }
             if (data && data.count) {
                 this.count = data.count;

@@ -50,7 +50,6 @@ export class SlideComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log(window.innerWidth);
         this.getList();
     }
 
