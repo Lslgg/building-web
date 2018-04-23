@@ -38,6 +38,7 @@ export class IndexComponent implements OnInit {
     constructor(private apollo: Apollo) { }
 
     ngOnInit() {
+        window.scrollTo(0, 0);
         this.getData();
     }
 

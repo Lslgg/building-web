@@ -25,28 +25,11 @@ export class ArticleComponent implements OnInit {
         this.type = this.route.snapshot.params['type'];
         this.column = this.route.snapshot.params['column'];
         this.getData();
-        // this.router.events.subscribe(data => {
-        //     if (data instanceof NavigationEnd) {
-        //         console.log(data);
-        //         console.log(document.referrer);
-        //     }
-        // });
     }
 
     ngOnInit() {
-        this.router.events.subscribe(data => {
-            if (data instanceof NavigationEnd) {
-                if (this.type != '' && this.column != '') { }
-                if (!data.url.includes(this.column.toString()) || !data.url.includes(this.type.toString())) {
-
-                }
-            }
-        });
+        window.scrollTo(0, 0);
     }
-
-    // ngAfterContentChecked() {
-    //     console.log('test');
-    // }
 
     // 查询 栏目图片 文章内容 
     getData() {

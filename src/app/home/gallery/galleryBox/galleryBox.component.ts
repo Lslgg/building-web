@@ -21,5 +21,7 @@ export class GalleryBoxComponent implements OnInit {
         this.column = this.route.snapshot.params['column'];
     }
 
-    ngOnInit() { }
+    ngOnInit() {
+        window.scrollTo(0, 0);
+    }
 }

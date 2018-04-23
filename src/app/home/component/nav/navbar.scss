@@ -1,121 +1,129 @@
-.navbox {
-  background-color: #fff;
-  .container {
-    min-height: 84px;
-    .row {
-      padding-left: 0;
-      .menu-col {
-        padding: 0;
-        nav {
-          margin: 0 auto;
-          ul {
-            padding: 0;
+.nav-container {
+    overflow: hidden;
+    .navbox {
+        background-color: #fff;
+        .container {
+            min-height: 84px;
+            .row {
+                padding-left: 0;
+                .menu-col {
+                    padding: 0;
+                    nav {
+                        margin: 0 auto;
+                        ul {
+                            padding: 0;
+                            margin: 0;
+                            list-style-type: none;
+                            font-size: 0;
+                            li {
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                }
+                .icon-col {
+                    .logobox {
+                        margin-top: 17px;
+                        a {
+                            display: inline-block;
+                            vertical-align: middle;
+                            img {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    .nav-btm {
+                        display: none;
+                        cursor: pointer;
+                        line-height: 1;
+                        position: absolute;
+                        top: 25px;
+                        right: 10px;
+                        border: 1px #ddd solid;
+                        border-radius: 5px;
+                        padding: 7px 8px;
+                        font-size: 20px;
+                        background: rgba(255, 255, 255, 0.8);
+                    }
+                }
+            }
+        }
+    }
+    .nav-tap {
+        position: fixed;
+        top: 0;
+        bottom: 0; // right: -440px;
+        // width: 440px;
+        height: 100%;
+        background-color: #fff;
+        transition: right 0.3s;
+        h3 {
             margin: 0;
-            list-style-type: none;
-            font-size: 0;
-            li {
-              display: inline-block;
-              vertical-align: middle;
+            padding: 0;
+            font-size: 16px;
+            text-align: center;
+            color: #111;
+            padding: 15px 0 5px 0;
+            border-bottom: 1px solid #ccc;
+            &:hover {
+                color: #AF7F48;
             }
-          }
         }
-      }
-      .icon-col {
-        .logobox {
-          margin-top: 17px;
-          a {
-            display: inline-block;
-            vertical-align: middle;
-            img {
-              cursor: pointer;
+        .icon-row {
+            padding: 12px 20px;
+            font-size: 18px;
+            letter-spacing: 10px;
+            border-bottom: 1px solid #ccc;
+            a {
+                color: inherit;
             }
-          }
         }
-        .nav-btm {
-          display: none;
-          cursor: pointer;
-          line-height: 1;
-          position: absolute;
-          top: 25px;
-          right: 10px;
-          border: 1px #ddd solid;
-          border-radius: 5px;
-          padding: 7px 8px;
-          font-size: 20px;
-          background: rgba(255, 255, 255, 0.8);
+        .input-row {
+            padding: 15px 15px 5px 15px;
+            input {
+                width: 100%;
+                height: 32px;
+                line-height: 32px;
+                padding: 0 16px;
+                border: none;
+                background-color: #f2f2f2;
+                border-radius: 10px;
+            }
         }
-      }
+        .nav-phone {
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+        }
     }
-  }
+    .tap-wrapper {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        z-index: 4000;
+    }
+    .display-none {
+        display: none !important;
+    }
+    .nav-top-open {
+        right: 0 !important;
+        z-index: 5000;
+    }
 }
 
-.nav-tap {
-  position: fixed;
-  top: 0;
-  bottom: 0; // right: -440px;
-  // width: 440px;
-  height: 100%;
-  background-color: #fff;
-  transition: right 0.3s;
-  h3 {
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    text-align: center;
-    color: #111;
-    padding: 15px 0 5px 0;
-    border-bottom: 1px solid #ccc;
-    &:hover {
-      color: #AF7F48;
-    }
-  }
-  .icon-row {
-    padding: 12px 20px;
-    font-size: 18px;
-    letter-spacing: 10px;
-    border-bottom: 1px solid #ccc;
-    a {
-      color: inherit;
-    }
-  }
-  .input-row {
-    padding: 15px 15px 5px 15px;
-    input {
-      width: 100%;
-      height: 32px;
-      line-height: 32px;
-      padding: 0 16px;
-      border: none;
-      background-color: #f2f2f2;
-      border-radius: 10px;
-    }
-  }
-  .nav-phone {
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-    }
-  }
-}
-
-.tap-wrapper {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: transparent;
-  z-index: 4000;
-}
-
-.display-none {
-  display: none !important;
-}
-
-.nav-top-open {
-  right: 0 !important;
-  z-index: 5000;
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 8000;
 }

@@ -12,11 +12,7 @@ import { BuildingArticle } from './component/bean/buildingArticle';
     styleUrls: ['./home.scss']
 })
 
-
-
 export class HomeComponent implements OnInit {
-
-    flag: Boolean = false;
 
     firstMenu: Array<BuildingMenu>;
 
@@ -33,6 +29,7 @@ export class HomeComponent implements OnInit {
     constructor(private apollo: Apollo) { }
 
     ngOnInit() {
+        window.scrollTo(0, 0);
         this.getData();
     }
 
@@ -54,7 +51,7 @@ export class HomeComponent implements OnInit {
                   id,title,brief,type,imageIds:Images{id,path}
                 }
                 info:getBuildingInfo {
-                    id,phone,email,qqLink,tcWeibo,xlWeibo,tbLink,address,brief,code,copyright
+                    id,phone,email,qqLink,tcWeibo,xlWeibo,tbLink,address,brief,code,copyright,board
                 }
                 qrcode:getBuildingImagesWhere(buildingImages:{type:"qrcode"}) {
                   id,title,brief,type,imageIds:Images{id,path}
@@ -84,13 +81,5 @@ export class HomeComponent implements OnInit {
         });
     }
 
-    @HostListener('window:scroll', ['$event'])
-    onScroll(event: any) {
-        if (window.scrollY > 0) {
-            this.flag = true;
-        } else {
-            this.flag = false;
-        }
-    }
 }
 

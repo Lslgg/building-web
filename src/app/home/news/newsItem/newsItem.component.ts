@@ -15,7 +15,9 @@ export class NewsItemComponent implements OnInit {
 
     constructor(@Inject("commonData") private cdata: CommonData) {
         this.dataServer = this.cdata.dataServer + '/';
-     }
+    }
 
-    ngOnInit() { }
+    ngOnInit() {
+        window.scrollTo(0, 0);
+    }
 }

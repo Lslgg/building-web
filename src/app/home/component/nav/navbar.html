@@ -1,64 +1,67 @@
-<home-search-bar [flag]="flag"></home-search-bar>
-<div class="navbox">
-  <div class="container">
-    <div class="row">
-      <div class="icon-col col-sm-12 col-md-12 col-lg-3 col-xl-5">
-        <div class="logobox">
-          <a routerLink="/home">
-            <img *ngIf="logo && logo.imageIds && logo.imageIds[0]" [defaultImage]="'assets/logging.gif'" lazyLoad="{{dataServer}}{{logo.imageIds[0].path}}">
-          </a>
+<div class="nav-container" id="home-navbar" [class.top-nav]="tFlag">
+  <home-search-bar [flag]="flag"></home-search-bar>
+  <div class="navbox">
+    <div class="container">
+      <div class="row">
+        <div class="icon-col col-sm-12 col-md-12 col-lg-3 col-xl-5">
+          <div class="logobox">
+            <a routerLink="/home">
+              <img *ngIf="logo && logo.imageIds && logo.imageIds[0]" [defaultImage]="'assets/logging.gif'" lazyLoad="{{dataServer}}{{logo.imageIds[0].path}}">
+            </a>
+          </div>
+          <span class="nav-btm d-block d-lg-none" (click)="toggleTap()">
+            <i class="fa fa-bars"></i>
+          </span>
         </div>
-        <span class="nav-btm d-block d-lg-none" (click)="toggleTap()">
-          <i class="fa fa-bars"></i>
-        </span>
-      </div>
-      <div class="menu-col col-lg-9 col-xl-7  col-sm-12 col-md-12  d-none d-lg-block">
-        <nav>
-          <ul *ngIf="firstMenu">
-            <li class="home-list-item" link="{{firstMenu[0].link}}" title="{{firstMenu[0].title}}"></li>
-            <li class="home-list-item" link="{{firstMenu[1].link}}" title="{{firstMenu[1].title}}" [secondList]="aboutList"></li>
-            <li class="home-list-item" link="{{firstMenu[2].link}}" title="{{firstMenu[2].title}}"></li>
-            <li class="home-list-item" link="{{firstMenu[3].link}}" title="{{firstMenu[3].title}}"></li>
-            <li class="home-list-item" link="{{firstMenu[4].link}}" title="{{firstMenu[4].title}}" [secondList]="serviceList"></li>
-            <li class="home-list-item" link="{{firstMenu[5].link}}" title="{{firstMenu[5].title}}" [secondList]="eliteList"></li>
-            <li class="home-list-item" link="{{firstMenu[6].link}}" title="{{firstMenu[6].title}}"></li>
-            <li class="home-list-item" isSearch=true (onClick)="onClick()"></li>
-          </ul>
-        </nav>
+        <div class="menu-col col-lg-9 col-xl-7  col-sm-12 col-md-12  d-none d-lg-block">
+          <nav>
+            <ul *ngIf="firstMenu">
+              <li class="home-list-item" link="{{firstMenu[0].link}}" title="{{firstMenu[0].title}}"></li>
+              <li class="home-list-item" link="{{firstMenu[1].link}}" title="{{firstMenu[1].title}}" [secondList]="aboutList"></li>
+              <li class="home-list-item" link="{{firstMenu[2].link}}" title="{{firstMenu[2].title}}"></li>
+              <li class="home-list-item" link="{{firstMenu[3].link}}" title="{{firstMenu[3].title}}"></li>
+              <li class="home-list-item" link="{{firstMenu[4].link}}" title="{{firstMenu[4].title}}" [secondList]="serviceList"></li>
+              <li class="home-list-item" link="{{firstMenu[5].link}}" title="{{firstMenu[5].title}}" [secondList]="eliteList"></li>
+              <li class="home-list-item" link="{{firstMenu[6].link}}" title="{{firstMenu[6].title}}"></li>
+              <li class="home-list-item" isSearch=true (onClick)="onClick()"></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="tap-wrapper d-block d-lg-none" [class.display-none]="!tabFlag" (click)="toggleTap()"></div>
-<div class="nav-tap d-block d-lg-none" [class.nav-top-open]="tabFlag">
-  <div class="box">
-    <h3>
-      网站导航
-    </h3>
-    <div class="icon-row">
-      <a routerLink="javascript:void(0);" (click)="toggleTap()">
-        <i class="fa fa-close"></i>
-      </a>
-      <a routerLink="#" (click)="toggleTap()">
-        <i class="fa fa-weibo"></i>
-      </a>
-      <a routerLink="#" (click)="toggleTap()">
-        <i class="fa fa-tencent-weibo"></i>
-      </a>
+  <div class="tap-wrapper d-block d-lg-none" [class.display-none]="!tabFlag" (click)="toggleTap()"></div>
+  <div class="nav-tap d-block d-lg-none" [class.nav-top-open]="tabFlag">
+    <div class="box">
+      <h3>
+        网站导航
+      </h3>
+      <div class="icon-row">
+        <a routerLink="javascript:void(0);" (click)="toggleTap()">
+          <i class="fa fa-close"></i>
+        </a>
+        <a routerLink="#" (click)="toggleTap()">
+          <i class="fa fa-weibo"></i>
+        </a>
+        <a routerLink="#" (click)="toggleTap()">
+          <i class="fa fa-tencent-weibo"></i>
+        </a>
+      </div>
+      <div class="input-row">
+        <input type="text" placeholder="输入关键字..." #data (keyup.enter)="onEnter(data.value)">
+      </div>
+      <nav class="nav-phone">
+        <ul *ngIf="firstMenu">
+          <li class="home-list-phone" link="{{firstMenu[0].link}}" title="{{firstMenu[0].title}}" (onLink)="toggleTap()"></li>
+          <li class="home-list-phone" link="{{firstMenu[1].link}}" title="{{firstMenu[1].title}}" (onLink)="toggleTap()" [secondList]="aboutList"></li>
+          <li class="home-list-phone" link="{{firstMenu[2].link}}" title="{{firstMenu[2].title}}" (onLink)="toggleTap()" [secondList]="nullList"></li>
+          <li class="home-list-phone" link="{{firstMenu[3].link}}" title="{{firstMenu[3].title}}" (onLink)="toggleTap()" [secondList]="nullList"></li>
+          <li class="home-list-phone" link="{{firstMenu[4].link}}" title="{{firstMenu[4].title}}" (onLink)="toggleTap()" [secondList]="serviceList"></li>
+          <li class="home-list-phone" link="{{firstMenu[5].link}}" title="{{firstMenu[5].title}}" (onLink)="toggleTap()" [secondList]="eliteList"></li>
+          <li class="home-list-phone" link="{{firstMenu[6].link}}" title="{{firstMenu[6].title}}" (onLink)="toggleTap()" [secondList]="nullList"></li>
+        </ul>
+      </nav>
     </div>
-    <div class="input-row">
-      <input type="text" placeholder="输入关键字..." #data (keyup.enter)="onEnter(data.value)">
-    </div>
-    <nav class="nav-phone">
-      <ul *ngIf="firstMenu">
-        <li class="home-list-phone" link="{{firstMenu[0].link}}" title="{{firstMenu[0].title}}" (onLink)="toggleTap()"></li>
-        <li class="home-list-phone" link="{{firstMenu[1].link}}" title="{{firstMenu[1].title}}" (onLink)="toggleTap()" [secondList]="aboutList"></li>
-        <li class="home-list-phone" link="{{firstMenu[2].link}}" title="{{firstMenu[2].title}}" (onLink)="toggleTap()" [secondList]="nullList"></li>
-        <li class="home-list-phone" link="{{firstMenu[3].link}}" title="{{firstMenu[3].title}}" (onLink)="toggleTap()" [secondList]="nullList"></li>
-        <li class="home-list-phone" link="{{firstMenu[4].link}}" title="{{firstMenu[4].title}}" (onLink)="toggleTap()" [secondList]="serviceList"></li>
-        <li class="home-list-phone" link="{{firstMenu[5].link}}" title="{{firstMenu[5].title}}" (onLink)="toggleTap()" [secondList]="eliteList"></li>
-        <li class="home-list-phone" link="{{firstMenu[6].link}}" title="{{firstMenu[6].title}}" (onLink)="toggleTap()" [secondList]="nullList"></li>
-      </ul>
-    </nav>
   </div>
+
 </div>

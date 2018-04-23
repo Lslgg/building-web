@@ -25,6 +25,7 @@ export class AddBuildingInfoComponent implements OnInit {
         copyright: ['', Validators.required],
         contact1: ['', Validators.required],
         contact2: ['', Validators.required],
+        board: ['', Validators.required],
         startDate: [this.cdate.startDate],
         endDate: [this.cdate.endDate],
     });
@@ -32,7 +33,7 @@ export class AddBuildingInfoComponent implements OnInit {
     buildingInfo: FormStr = {
         data: gql`query($id:String){
             info:getBuildingInfoById(id:$id){
-                id,phone,email,qqLink,tcWeibo,xlWeibo,tbLink,address,brief,code,copyright,contact1,contact2
+                id,phone,email,qqLink,tcWeibo,xlWeibo,tbLink,address,brief,code,copyright,contact1,contact2,board
             }
         }`,
         save: gql`mutation($info:inputBuildingInfo){

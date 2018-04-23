@@ -10,4 +10,5 @@ export class BuildingInfo {
     brief: String;
     code: String;
     copyright: String;
+    board: String;
 }

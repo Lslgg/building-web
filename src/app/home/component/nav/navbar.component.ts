@@ -24,6 +24,7 @@ export class NavBarComponent implements OnInit {
     tabFlag: Boolean = false;
     nullList: Array<{ link: String, title: String }> = [];
     flag: Number = 0;
+    tFlag: Boolean = false;
 
     dataServer: String = '';
 
@@ -31,7 +32,23 @@ export class NavBarComponent implements OnInit {
         this.dataServer = this.cdata.dataServer + '/';
     }
 
-    ngOnInit() { }
+    ngOnInit() {
+        var obj = this;
+        window.onscroll = function () {
+            var t = document.documentElement.scrollTop || document.body.scrollTop;
+            document.body.setAttribute('style', 'pointer-events: none;transition: none;');
+            if (t > 48) {
+                if (!obj.tFlag) {
+                    obj.tFlag = true;
+                }
+            }
+            if (t <= 48) {
+                if (obj.tFlag) {
+                    obj.tFlag = false;
+                }
+            }
+        }
+    }
 
     getSecondMenu(secondMenu: Array<BuildingMenu>) {
         this.aboutList = [];

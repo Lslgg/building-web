@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
@@ -28,6 +28,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 
 export class BoardComponent implements OnInit {
+
+    @Input() info: String;
 
     state: String = 'void';
 

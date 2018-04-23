@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
         }
     }
 
-    _info: BuildingInfo = { id: '', phone: '', email: '', qqLink: '', tcWeibo: '', xlWeibo: '', tbLink: '', address: '', brief: '', code: '', copyright: '' };
+    _info: BuildingInfo = { id: '', phone: '', email: '', qqLink: '', tcWeibo: '', xlWeibo: '', tbLink: '', address: '', brief: '', code: '', copyright: '', board: '' };
 
     constructor() { }
 
